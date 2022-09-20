@@ -26,7 +26,6 @@
     "type": "git",
     "url": "https://github.com/sakib412/lexical-react-rte.git"
   },
-  "dependencies": {},
   "scripts": {
     "build": "rm -rf dist/ && prettier --write src/ && yarn build:esm && yarn build:cjs",
     "build:esm": "tsc",
@@ -39,9 +38,13 @@
       "react-app"
     ]
   },
+  "dependencies": {
+    "@lexical/react": "^0.4.1",
+    "lexical": "^0.4.1"
+  },
   "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^16 || ^17 || ^18.2.0",
+    "react-dom": "^16 || ^17 || ^18.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.19.1",
