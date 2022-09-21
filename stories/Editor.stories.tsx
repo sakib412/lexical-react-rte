@@ -9,9 +9,8 @@ export default {
   component: Editor,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    placeholder: 'Hello',
   },
-} as unknown as ComponentMeta<typeof Editor>;
+} as ComponentMeta<typeof Editor>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Editor> = (args) => <Editor {...args} />;
@@ -19,5 +18,4 @@ const Template: ComponentStory<typeof Editor> = (args) => <Editor {...args} />;
 export const Main = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Main.args = {
-  placeholder: 'Editor',
 };

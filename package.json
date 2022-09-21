@@ -39,12 +39,15 @@
     ]
   },
   "dependencies": {
+    "@lexical/file": "^0.4.1",
     "@lexical/react": "^0.4.1",
-    "lexical": "^0.4.1"
+    "katex": "^0.16.2",
+    "lexical": "^0.4.1",
+    "lodash-es": "^4.17.21"
   },
   "peerDependencies": {
-    "react": "^16 || ^17 || ^18.2.0",
-    "react-dom": "^16 || ^17 || ^18.2.0"
+    "react": "^17 || ^18.2.0",
+    "react-dom": "^17 || ^18.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.19.1",

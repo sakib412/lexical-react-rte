@@ -1,49 +1,32 @@
-import { FC } from 'react';
+/**
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ */
 
-import { $getRoot, $getSelection, EditorState } from 'lexical';
+import './index.css';
 
-import { LexicalComposer } from '@lexical/react/LexicalComposer';
-import { PlainTextPlugin } from '@lexical/react/LexicalPlainTextPlugin';
-import { ContentEditable } from '@lexical/react/LexicalContentEditable';
-import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin';
-import { OnChangePlugin } from '@lexical/react/LexicalOnChangePlugin';
 
-export interface EditorProps {
-  placeholder: string;
-}
+import App from './App';
 
-const theme = {};
-
-function onChange(editorState: EditorState) {
-  editorState.read(() => {
-    // Read the contents of the EditorState here.
-    const root = $getRoot();
-    const selection = $getSelection();
-
-    console.log(root, selection);
-  });
-}
-
-function onError(error: any) {
-  console.error(error);
-}
-
-const Editor: FC<EditorProps> = ({ placeholder }) => {
-  const initialConfig = {
-    namespace: 'LexicalEditor',
-    theme,
-    onError,
-  };
-  return (
-    <LexicalComposer initialConfig={initialConfig}>
-      <PlainTextPlugin
-        contentEditable={<ContentEditable />}
-        placeholder={<div>{placeholder}</div>}
-      />
-      <OnChangePlugin onChange={onChange} />
-      <HistoryPlugin />
-    </LexicalComposer>
-  );
+// Handle runtime errors
+const showErrorOverlay = (err: Event) => {
+  const ErrorOverlay = customElements.get('vite-error-overlay');
+  if (!ErrorOverlay) {
+    return;
+  }
+  const overlay = new ErrorOverlay(err);
+  const body = document.body;
+  if (body !== null) {
+    body.appendChild(overlay);
+  }
 };
 
-export default Editor;
+window.addEventListener('error', showErrorOverlay);
+window.addEventListener('unhandledrejection', ({ reason }) =>
+  showErrorOverlay(reason),
+);
+
+export default App

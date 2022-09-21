@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "target": "ES2019",
     "allowSyntheticDefaultImports": true,
     "declaration": true,
     "esModuleInterop": true,
@@ -21,7 +22,6 @@
     "outDir": "dist/esm",
     "sourceMap": true,
     "strict": true,
-    "target": "es6"
   },
   "include": [
     "src/**/*.ts",
