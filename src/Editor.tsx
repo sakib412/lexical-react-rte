@@ -9,8 +9,6 @@ import { OnChangePlugin } from '@lexical/react/LexicalOnChangePlugin';
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
 import theme from './themes/theme';
 
-
-
 // When the editor changes, you can get notified via the
 // LexicalOnChangePlugin!
 function onChange(editorState: EditorState) {
