@@ -39,11 +39,8 @@
     ]
   },
   "dependencies": {
-    "@lexical/file": "^0.4.1",
-    "@lexical/react": "^0.4.1",
-    "katex": "^0.16.2",
-    "lexical": "^0.4.1",
-    "lodash-es": "^4.17.21"
+    "@lexical/react": "^0.6.0",
+    "lexical": "^0.6.0"
   },
   "peerDependencies": {
     "react": "^17 || ^18.2.0",

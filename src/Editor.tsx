@@ -1,166 +1,69 @@
-/**
- * Copyright (c) Meta Platforms, Inc. and affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
+import { $getRoot, $getSelection, EditorState } from 'lexical';
+import { useEffect } from 'react';
 
-import { AutoFocusPlugin } from '@lexical/react/LexicalAutoFocusPlugin';
-import { AutoScrollPlugin } from '@lexical/react/LexicalAutoScrollPlugin';
-import { CharacterLimitPlugin } from '@lexical/react/LexicalCharacterLimitPlugin';
-import { CheckListPlugin } from '@lexical/react/LexicalCheckListPlugin';
-import { ClearEditorPlugin } from '@lexical/react/LexicalClearEditorPlugin';
-import { HashtagPlugin } from '@lexical/react/LexicalHashtagPlugin';
+import { LexicalComposer } from '@lexical/react/LexicalComposer';
+import { PlainTextPlugin } from '@lexical/react/LexicalPlainTextPlugin';
+import { ContentEditable } from '@lexical/react/LexicalContentEditable';
 import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin';
-import { LinkPlugin } from '@lexical/react/LexicalLinkPlugin';
-import { ListPlugin } from '@lexical/react/LexicalListPlugin';
-import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin';
-import { TablePlugin } from '@lexical/react/LexicalTablePlugin';
-// @ts-ignore
-import * as React from 'react';
-import { useRef, useState } from 'react';
+import { OnChangePlugin } from '@lexical/react/LexicalOnChangePlugin';
+import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
+import theme from './themes/theme';
 
-import { useSharedHistoryContext } from './context/SharedHistoryContext';
-import TableCellNodes from './nodes/TableCellNodes';
-import AutocompletePlugin from './plugins/AutocompletePlugin';
-import AutoEmbedPlugin from './plugins/AutoEmbedPlugin';
-import AutoLinkPlugin from './plugins/AutoLinkPlugin';
-import ClickableLinkPlugin from './plugins/ClickableLinkPlugin';
-import CodeActionMenuPlugin from './plugins/CodeActionMenuPlugin';
-import CodeHighlightPlugin from './plugins/CodeHighlightPlugin';
-import ComponentPickerPlugin from './plugins/ComponentPickerPlugin';
-import EmojisPlugin from './plugins/EmojisPlugin';
-import EquationsPlugin from './plugins/EquationsPlugin';
-import FigmaPlugin from './plugins/FigmaPlugin';
-import FloatingLinkEditorPlugin from './plugins/FloatingLinkEditorPlugin';
-import FloatingTextFormatToolbarPlugin from './plugins/FloatingTextFormatToolbarPlugin';
-import HorizontalRulePlugin from './plugins/HorizontalRulePlugin';
-import ImagesPlugin from './plugins/ImagesPlugin';
-import KeywordsPlugin from './plugins/KeywordsPlugin';
-import ListMaxIndentLevelPlugin from './plugins/ListMaxIndentLevelPlugin';
-import MarkdownShortcutPlugin from './plugins/MarkdownShortcutPlugin';
-import { MaxLengthPlugin } from './plugins/MaxLengthPlugin';
-import MentionsPlugin from './plugins/MentionsPlugin';
-import PollPlugin from './plugins/PollPlugin';
-import SpeechToTextPlugin from './plugins/SpeechToTextPlugin';
-import TabFocusPlugin from './plugins/TabFocusPlugin';
-import TableCellActionMenuPlugin from './plugins/TableActionMenuPlugin';
-import { TablePlugin as NewTablePlugin } from './plugins/TablePlugin';
-import ToolbarPlugin from './plugins/ToolbarPlugin';
-import TwitterPlugin from './plugins/TwitterPlugin';
-import YouTubePlugin from './plugins/YouTubePlugin';
-import PlaygroundEditorTheme from './themes/PlaygroundEditorTheme';
-import ContentEditable from './ui/ContentEditable';
-import Placeholder from './ui/Placeholder';
 
-export default function Editor(): JSX.Element {
-  const { historyState } = useSharedHistoryContext();
 
-  const text = 'Enter some rich text...';
-  const placeholder = <Placeholder>{text}</Placeholder>;
-  const scrollRef = useRef(null);
-  const [floatingAnchorElem, setFloatingAnchorElem] =
-    useState<HTMLDivElement | null>(null);
+// When the editor changes, you can get notified via the
+// LexicalOnChangePlugin!
+function onChange(editorState: EditorState) {
+  editorState.read(() => {
+    // Read the contents of the EditorState here.
+    const root = $getRoot();
+    const selection = $getSelection();
 
-  const onRef = (_floatingAnchorElem: HTMLDivElement) => {
-    if (_floatingAnchorElem !== null) {
-      setFloatingAnchorElem(_floatingAnchorElem);
-    }
-  };
+    console.log(root, selection);
+  });
+}
 
-  const cellEditorConfig = {
-    namespace: 'Playground',
-    nodes: [...TableCellNodes],
-    onError: (error: Error) => {
-      throw error;
-    },
-    theme: PlaygroundEditorTheme,
+// Lexical React plugins are React components, which makes them
+// highly composable. Furthermore, you can lazy load plugins if
+// desired, so you don't pay the cost for plugins until you
+// actually use them.
+function MyCustomAutoFocusPlugin() {
+  const [editor] = useLexicalComposerContext();
+
+  useEffect(() => {
+    // Focus the editor when the effect fires!
+    editor.focus();
+  }, [editor]);
+
+  return null;
+}
+
+// Catch any errors that occur during Lexical updates and log them
+// or throw them as needed. If you don't throw them, Lexical will
+// try to recover gracefully without losing user data.
+function onError(error: Error) {
+  console.error(error);
+}
+
+function Editor() {
+  const initialConfig = {
+    namespace: 'MyEditor',
+    theme: theme,
+    onError,
   };
 
   return (
-    <>
-      <ToolbarPlugin />
-      <div
-        className={`editor-container`}
-        ref={scrollRef}>
-        <MaxLengthPlugin maxLength={30} />
-        <AutoFocusPlugin />
-        <ClearEditorPlugin />
-        <ComponentPickerPlugin />
-        <AutoEmbedPlugin />
-        <MentionsPlugin />
-        <EmojisPlugin />
-        <HashtagPlugin />
-        <KeywordsPlugin />
-        <SpeechToTextPlugin />
-        <AutoLinkPlugin />
-        <AutoScrollPlugin scrollRef={scrollRef} />
-
-        <>
-          <HistoryPlugin externalHistoryState={historyState} />
-
-          <RichTextPlugin
-            contentEditable={
-              <div className="editor-scroller">
-                <div className="editor" ref={onRef}>
-                  <ContentEditable />
-                </div>
-              </div>
-            }
-            placeholder={placeholder}
-          />
-          <MarkdownShortcutPlugin />
-          <CodeHighlightPlugin />
-          <ListPlugin />
-          <CheckListPlugin />
-          <ListMaxIndentLevelPlugin maxDepth={7} />
-          <TablePlugin />
-          <NewTablePlugin cellEditorConfig={cellEditorConfig}>
-            <AutoFocusPlugin />
-            <RichTextPlugin
-              contentEditable={
-                <ContentEditable className="TableNode__contentEditable" />
-              }
-              placeholder={''}
-            />
-            <MentionsPlugin />
-            <HistoryPlugin />
-            <ImagesPlugin captionsEnabled={false} />
-            <LinkPlugin />
-            <ClickableLinkPlugin />
-            <FloatingTextFormatToolbarPlugin />
-          </NewTablePlugin>
-          <ImagesPlugin />
-          <LinkPlugin />
-          <PollPlugin />
-          <TwitterPlugin />
-          <YouTubePlugin />
-          <FigmaPlugin />
-          <ClickableLinkPlugin />
-          <HorizontalRulePlugin />
-          <EquationsPlugin />
-          <TabFocusPlugin />
-          {floatingAnchorElem && (
-            <>
-              <CodeActionMenuPlugin anchorElem={floatingAnchorElem} />
-              <FloatingLinkEditorPlugin anchorElem={floatingAnchorElem} />
-              <TableCellActionMenuPlugin anchorElem={floatingAnchorElem} />
-              <FloatingTextFormatToolbarPlugin
-                anchorElem={floatingAnchorElem}
-              />
-            </>
-          )}
-        </>
-
-        <CharacterLimitPlugin charset={'UTF-8'} />
-
-        <AutocompletePlugin />
-        {/* <div>{showTableOfContents && <TableOfContentsPlugin />}</div>
-        <div className="toc">
-          {showTableOfContents && <TableOfContentsPlugin />}
-        </div> */}
-      </div>
-    </>
+    <LexicalComposer initialConfig={initialConfig}>
+      <PlainTextPlugin
+        contentEditable={<ContentEditable />}
+        ErrorBoundary={() => null}
+        placeholder={<div>Enter some text...</div>}
+      />
+      <OnChangePlugin onChange={onChange} />
+      <HistoryPlugin />
+      <MyCustomAutoFocusPlugin />
+    </LexicalComposer>
   );
 }
+
+export default Editor;
