@@ -1,7 +1,25 @@
 {
   "name": "lexical-react-rte",
-  "private": true,
+  "description": "Ready editor built with lexical",
+  "private": false,
   "version": "0.1.6",
+  "author": "Najmus Sakib <nazmusakib412@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/sakib412/lexical-react-rte#readme",
+  "keywords": [
+    "lexical-react",
+    "lexical-react-rte",
+    "react-rte",
+    "lexical-playground",
+    "lexical"
+  ],
+  "bugs": {
+    "url": "https://github.com/sakib412/lexical-react-rte/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sakib412/lexical-react-rte.git"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,7 +27,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
-  "dependencies": {
+  "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
