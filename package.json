@@ -1,0 +1,68 @@
+{
+  "name": "lexical-react-rte",
+  "version": "0.1.5",
+  "description": "Ready editor built with lexical",
+  "private": false,
+  "author": "Najmus Sakib <nazmusakib412@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/sakib412/lexical-react-rte#readme",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "keywords": [
+    "lexical-react",
+    "lexical-react-rte",
+    "react-rte",
+    "lexical-playground",
+    "lexical"
+  ],
+  "bugs": {
+    "url": "https://github.com/sakib412/lexical-react-rte/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sakib412/lexical-react-rte.git"
+  },
+  "scripts": {
+    "build": "rm -rf dist/ && prettier --write src/ && yarn build:esm && yarn build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module CommonJS --outDir dist/cjs",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ]
+  },
+  "dependencies": {
+    "@lexical/react": "^0.6.0",
+    "lexical": "^0.6.0"
+  },
+  "peerDependencies": {
+    "react": "^17 || ^18.2.0",
+    "react-dom": "^17 || ^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.1",
+    "@storybook/addon-actions": "^6.5.12",
+    "@storybook/addon-essentials": "^6.5.12",
+    "@storybook/addon-interactions": "^6.5.12",
+    "@storybook/addon-links": "^6.5.12",
+    "@storybook/builder-webpack4": "^6.5.12",
+    "@storybook/manager-webpack4": "^6.5.12",
+    "@storybook/react": "^6.5.12",
+    "@storybook/testing-library": "^0.0.13",
+    "@types/node": "^18.7.18",
+    "@types/react": "^18.0.20",
+    "@types/react-dom": "^18.0.6",
+    "babel-loader": "^8.2.5",
+    "prettier": "^2.7.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^4.8.3"
+  }
+}
