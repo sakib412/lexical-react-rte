@@ -21,6 +21,17 @@
     "url": "https://github.com/sakib412/lexical-react-rte.git"
   },
   "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/lexical-react-rte.umd.cjs",
+  "module": "./dist/lexical-react-rte.js",
+  "exports": {
+    ".": {
+      "import": "./dist/lexical-react-rte.js",
+      "require": "./dist/lexical-react-rte.umd.cjs"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
