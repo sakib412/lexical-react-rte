@@ -33,7 +33,6 @@
 .editor-input {
   min-height: 8rem;
   resize: none;
-  /* font-size: 15px; */
   caret-color: rgb(5, 5, 5);
   position: relative;
   tab-size: 1;
