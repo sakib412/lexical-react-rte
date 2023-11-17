@@ -64,5 +64,9 @@
     "@lexical/react": "^0.12.2",
     "@lexical/rich-text": "^0.12.2",
     "lexical": "^0.12.2"
+  },
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=8"
   }
 }
