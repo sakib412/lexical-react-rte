@@ -1,7 +1,11 @@
 import Editor from '.';
 
 function App() {
-  return <Editor />;
+  return (
+    <div className="editor-wrapper">
+      <Editor />
+    </div>
+  );
 }
 
 export default App;
