@@ -9,4 +9,36 @@
 <p/>
 
 
-This is built with lexical
+## Getting started with Editor
+
+> Note: This library is still in alpha and is not yet ready for production use. Please use at your own risk. 
+
+Install `lexical-react-rte`:
+
+```
+pnpm add lexical-react-rte
+```
+or `npm install lexical-react-rte` or `yarn add lexical-react-rte`.
+
+Below is an example of the editor using `lexical-reat-rte` ([try it yourself](https://codesandbox.io/p/sandbox/lexical-react-rte-5r4dpg?file=%2Fsrc%2FApp.tsx)).
+
+```tsx
+import Editor from "lexical-react-rte";
+import "lexical-react-rte/dist/index.css";
+
+export default function App() {
+  return (
+    <div className="App">
+      <h2>Start editing to see some magic happen!</h2>
+      <Editor />
+    </div>
+  );
+}
+
+``` 
+
+--- 
+
+## Planned Features
+ - 
+(will be updated soon...)
