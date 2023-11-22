@@ -19,8 +19,8 @@ const Editor = () => {
             placeholder={<Placeholder />}
             ErrorBoundary={LexicalErrorBoundary}
           />
-          <HistoryPlugin />
           <AutoFocusPlugin />
+          <HistoryPlugin />
         </div>
       </div>
     </LexicalComposer>
