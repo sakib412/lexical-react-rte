@@ -11,6 +11,7 @@
 
 ## Getting started with Editor
 
+> [!CAUTION]
 > Note: This library is still in alpha and is not yet ready for production use. Please use at your own risk. 
 
 Install `lexical-react-rte`:
