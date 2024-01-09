@@ -21,7 +21,7 @@ pnpm add lexical-react-rte
 ```
 or `npm install lexical-react-rte` or `yarn add lexical-react-rte`.
 
-Below is an example of the editor using `lexical-reat-rte` ([try it yourself](https://codesandbox.io/p/sandbox/lexical-react-rte-5r4dpg?file=%2Fsrc%2FApp.tsx)).
+Below is an example of the editor using `lexical-reat-rte` ([try it yourself](https://codesandbox.io/p/sandbox/lexical-react-rte-5r4dpg?file=%2Fsrc%2FApp.tsx))
 
 ```tsx
 import Editor from "lexical-react-rte";
