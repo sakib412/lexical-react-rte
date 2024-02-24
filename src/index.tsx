@@ -1,4 +1,5 @@
 import './styles/editor.css';
+import { useState } from 'react';
 import {LexicalComposer} from '@lexical/react/LexicalComposer';
 import {RichTextPlugin} from '@lexical/react/LexicalRichTextPlugin';
 import LexicalErrorBoundary from '@lexical/react/LexicalErrorBoundary';
@@ -8,8 +9,10 @@ import {HistoryPlugin} from '@lexical/react/LexicalHistoryPlugin';
 
 import editorDefaultConfig from './configs/editorDefaultConfig';
 import Placeholder from './ui/Placeholder';
+import ToolbarPlugin from './plugins/ToolbarPlugin/ToolbarPlugin';
 
 const Editor = () => {
+  const [_isLinkEditMode, setIsLinkEditMode] = useState<boolean>(false);
   return (
     <LexicalComposer initialConfig={editorDefaultConfig}>
       <div className="editor-container">
@@ -21,6 +24,7 @@ const Editor = () => {
           />
           <AutoFocusPlugin />
           <HistoryPlugin />
+          <ToolbarPlugin setIsLinkEditMode={setIsLinkEditMode} />
         </div>
       </div>
     </LexicalComposer>
