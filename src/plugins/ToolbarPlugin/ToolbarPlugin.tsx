@@ -55,7 +55,6 @@ import {
   CAN_UNDO_COMMAND,
   COMMAND_PRIORITY_CRITICAL,
   COMMAND_PRIORITY_NORMAL,
-  DEPRECATED_$isGridSelection,
   ElementFormatType,
   FORMAT_ELEMENT_COMMAND,
   FORMAT_TEXT_COMMAND,
@@ -191,12 +190,7 @@ function BlockFormatDropDown({
   const formatParagraph = () => {
     editor.update(() => {
       const selection = $getSelection();
-      if (
-        $isRangeSelection(selection) ||
-        DEPRECATED_$isGridSelection(selection)
-      ) {
-        $setBlocksType(selection, () => $createParagraphNode());
-      }
+      $setBlocksType(selection, () => $createParagraphNode());
     });
   };
 
@@ -204,12 +198,7 @@ function BlockFormatDropDown({
     if (blockType !== headingSize) {
       editor.update(() => {
         const selection = $getSelection();
-        if (
-          $isRangeSelection(selection) ||
-          DEPRECATED_$isGridSelection(selection)
-        ) {
-          $setBlocksType(selection, () => $createHeadingNode(headingSize));
-        }
+        $setBlocksType(selection, () => $createHeadingNode(headingSize));
       });
     }
   };
@@ -242,12 +231,7 @@ function BlockFormatDropDown({
     if (blockType !== 'quote') {
       editor.update(() => {
         const selection = $getSelection();
-        if (
-          $isRangeSelection(selection) ||
-          DEPRECATED_$isGridSelection(selection)
-        ) {
-          $setBlocksType(selection, () => $createQuoteNode());
-        }
+        $setBlocksType(selection, () => $createQuoteNode());
       });
     }
   };
@@ -257,10 +241,7 @@ function BlockFormatDropDown({
       editor.update(() => {
         let selection = $getSelection();
 
-        if (
-          $isRangeSelection(selection) ||
-          DEPRECATED_$isGridSelection(selection)
-        ) {
+        if (selection !== null) {
           if (selection.isCollapsed()) {
             $setBlocksType(selection, () => $createCodeNode());
           } else {
@@ -360,17 +341,14 @@ function FontDropDown({
     (option: string) => {
       editor.update(() => {
         const selection = $getSelection();
-        if (
-          $isRangeSelection(selection) ||
-          DEPRECATED_$isGridSelection(selection)
-        ) {
+        if (selection !== null) {
           $patchStyleText(selection, {
             [style]: option,
           });
         }
       });
     },
-    [editor, style]
+    [editor, style],
   );
 
   const buttonAriaLabel =
@@ -515,7 +493,7 @@ export default function ToolbarPlugin({
   const [activeEditor, setActiveEditor] = useState(editor);
   const [blockType, setBlockType] =
     useState<keyof typeof blockTypeToBlockName>('paragraph');
-  const [rootType, setRootType] =
+  const [rootType] =
     useState<keyof typeof rootTypeToRootName>('root');
   const [selectedElementKey, setSelectedElementKey] = useState<NodeKey | null>(
     null
@@ -535,7 +513,7 @@ export default function ToolbarPlugin({
   const [isCode, setIsCode] = useState(false);
   const [canUndo, setCanUndo] = useState(false);
   const [canRedo, setCanRedo] = useState(false);
-  const [modal, showModal] = useModal();
+  const [modal] = useModal();
   const [isRTL, setIsRTL] = useState(false);
   const [codeLanguage, setCodeLanguage] = useState<string>('');
   const [isEditable, setIsEditable] = useState(() => editor.isEditable());
@@ -710,18 +688,18 @@ export default function ToolbarPlugin({
   }, [activeEditor, isLink, setIsLinkEditMode]);
 
   const applyStyleText = useCallback(
-    (styles: Record<string, string>) => {
-      activeEditor.update(() => {
-        const selection = $getSelection();
-        if (
-          $isRangeSelection(selection) ||
-          DEPRECATED_$isGridSelection(selection)
-        ) {
-          $patchStyleText(selection, styles);
-        }
-      });
+    (styles: Record<string, string>, skipHistoryStack?: boolean) => {
+      activeEditor.update(
+        () => {
+          const selection = $getSelection();
+          if (selection !== null) {
+            $patchStyleText(selection, styles);
+          }
+        },
+        skipHistoryStack ? {tag: 'historic'} : {},
+      );
     },
-    [activeEditor]
+    [activeEditor],
   );
 
   const clearFormatting = useCallback(() => {
@@ -740,20 +718,23 @@ export default function ToolbarPlugin({
           // We split the first and last node by the selection
           // So that we don't format unselected text inside those nodes
           if ($isTextNode(node)) {
+            // Use a separate variable to ensure TS does not lose the refinement
+            let textNode = node;
             if (idx === 0 && anchor.offset !== 0) {
-              node = node.splitText(anchor.offset)[1] || node;
+              textNode = textNode.splitText(anchor.offset)[1] || textNode;
             }
             if (idx === nodes.length - 1) {
-              node = node.splitText(focus.offset)[0] || node;
+              textNode = textNode.splitText(focus.offset)[0] || textNode;
             }
 
-            if (node.__style !== '') {
-              node.setStyle('');
+            if (textNode.__style !== '') {
+              textNode.setStyle('');
             }
-            if (node.__format !== 0) {
-              node.setFormat(0);
-              $getNearestBlockElementAncestorOrThrow(node).setFormat('');
+            if (textNode.__format !== 0) {
+              textNode.setFormat(0);
+              $getNearestBlockElementAncestorOrThrow(textNode).setFormat('');
             }
+            node = textNode;
           } else if ($isHeadingNode(node) || $isQuoteNode(node)) {
             node.replace($createParagraphNode(), true);
           } else if ($isDecoratorBlockNode(node)) {
