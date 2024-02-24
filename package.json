@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/sakib412/lexical-react-rte.git"
+    "url": "git+https://github.com/sakib412/lexical-react-rte.git"
   },
   "type": "module",
   "files": [
