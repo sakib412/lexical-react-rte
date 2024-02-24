@@ -13,6 +13,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "declaration": true,
+    "declarationMap": true,
     "typeRoots": ["./dist/index.d.ts", "node_modules/@types"],
     "jsx": "react-jsx",
 
@@ -20,7 +21,10 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
   "include": ["src"],
   "references": [{"path": "./tsconfig.node.json"}]
