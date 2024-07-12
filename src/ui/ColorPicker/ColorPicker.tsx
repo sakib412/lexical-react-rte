@@ -230,6 +230,7 @@ interface Color {
   rgb: RGB;
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function toHex(value: string): string {
   if (!value.startsWith('#')) {
     const ctx = document.createElement('canvas').getContext('2d');

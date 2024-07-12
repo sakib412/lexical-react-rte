@@ -12,7 +12,7 @@ import Placeholder from './ui/Placeholder';
 import ToolbarPlugin from './plugins/ToolbarPlugin/ToolbarPlugin';
 
 const Editor = () => {
-  const [_isLinkEditMode, setIsLinkEditMode] = useState<boolean>(false);
+  const [, setIsLinkEditMode] = useState<boolean>(false);
   return (
     <LexicalComposer initialConfig={editorDefaultConfig}>
       <div className="editor-container">
