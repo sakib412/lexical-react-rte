@@ -1,4 +1,4 @@
-<h1 align="center">Lexical React RTE<h1/>
+<h1 align="center">Lexical React RTE HOLA<h1/>
 
 <p align="center">
   <img alt="npm type definitions" src="https://img.shields.io/npm/types/lexical-react-rte?label=%20&logo=typescript&logoColor=white&style=flat-square">
