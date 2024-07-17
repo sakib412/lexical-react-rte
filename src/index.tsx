@@ -1,5 +1,5 @@
 import './styles/editor.css';
-import { useState } from 'react';
+import {useState} from 'react';
 import {LexicalComposer} from '@lexical/react/LexicalComposer';
 import {RichTextPlugin} from '@lexical/react/LexicalRichTextPlugin';
 import LexicalErrorBoundary from '@lexical/react/LexicalErrorBoundary';
@@ -11,7 +11,7 @@ import editorDefaultConfig from './configs/editorDefaultConfig';
 import Placeholder from './ui/Placeholder';
 import ToolbarPlugin from './plugins/ToolbarPlugin/ToolbarPlugin';
 
-const Editor = () => {
+function Editor() {
   const [, setIsLinkEditMode] = useState<boolean>(false);
   return (
     <LexicalComposer initialConfig={editorDefaultConfig}>
@@ -29,6 +29,6 @@ const Editor = () => {
       </div>
     </LexicalComposer>
   );
-};
+}
 
 export default Editor;
