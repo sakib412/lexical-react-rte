@@ -142,44 +142,44 @@ const CODE_LANGUAGE_OPTIONS = getCodeLanguageOptions();
 //   ['20px', '20px'],
 // ];
 
-const ELEMENT_FORMAT_OPTIONS: {
-  [key in Exclude<ElementFormatType, ''>]: {
-    icon: string;
-    iconRTL: string;
-    name: string;
-  };
-} = {
-  center: {
-    icon: 'center-align',
-    iconRTL: 'center-align',
-    name: 'Center Align',
-  },
-  end: {
-    icon: 'right-align',
-    iconRTL: 'left-align',
-    name: 'End Align',
-  },
-  justify: {
-    icon: 'justify-align',
-    iconRTL: 'justify-align',
-    name: 'Justify Align',
-  },
-  left: {
-    icon: 'left-align',
-    iconRTL: 'left-align',
-    name: 'Left Align',
-  },
-  right: {
-    icon: 'right-align',
-    iconRTL: 'left-align',
-    name: 'Right Align',
-  },
-  start: {
-    icon: 'left-align',
-    iconRTL: 'right-align',
-    name: 'Start Align',
-  },
-};
+// const ELEMENT_FORMAT_OPTIONS: {
+//   [key in Exclude<ElementFormatType, ''>]: {
+//     icon: string;
+//     iconRTL: string;
+//     name: string;
+//   };
+// } = {
+//   center: {
+//     icon: 'center-align',
+//     iconRTL: 'center-align',
+//     name: 'Center Align',
+//   },
+//   end: {
+//     icon: 'right-align',
+//     iconRTL: 'left-align',
+//     name: 'End Align',
+//   },
+//   justify: {
+//     icon: 'justify-align',
+//     iconRTL: 'justify-align',
+//     name: 'Justify Align',
+//   },
+//   left: {
+//     icon: 'left-align',
+//     iconRTL: 'left-align',
+//     name: 'Left Align',
+//   },
+//   right: {
+//     icon: 'right-align',
+//     iconRTL: 'left-align',
+//     name: 'Right Align',
+//   },
+//   start: {
+//     icon: 'left-align',
+//     iconRTL: 'right-align',
+//     name: 'Start Align',
+//   },
+// };
 
 function dropDownActiveClass(active: boolean) {
   if (active) return 'active dropdown-item-active';
@@ -502,27 +502,28 @@ export default function ToolbarPlugin({
   const [activeEditor, setActiveEditor] = useState(editor);
   const [blockType, setBlockType] =
     useState<keyof typeof blockTypeToBlockName>('paragraph');
-  const [rootType] = useState<keyof typeof rootTypeToRootName>('root');
+  const [_rootType] = useState<keyof typeof rootTypeToRootName>('root');
   const [selectedElementKey, setSelectedElementKey] = useState<NodeKey | null>(
     null
   );
-  const [fontSize, setFontSize] = useState<string>('15px');
-  const [fontColor, setFontColor] = useState<string>('#000');
-  const [bgColor, setBgColor] = useState<string>('#fff');
-  const [fontFamily, setFontFamily] = useState<string>('Arial');
-  const [elementFormat, setElementFormat] = useState<ElementFormatType>('left');
+  const [_fontSize, setFontSize] = useState<string>('15px');
+  const [_fontColor, setFontColor] = useState<string>('#000');
+  const [_bgColor, setBgColor] = useState<string>('#fff');
+  const [_fontFamily, setFontFamily] = useState<string>('Arial');
+  const [_elementFormat, setElementFormat] =
+    useState<ElementFormatType>('left');
   const [isLink, setIsLink] = useState(false);
   const [isBold, setIsBold] = useState(false);
   const [isItalic, setIsItalic] = useState(false);
   const [isUnderline, setIsUnderline] = useState(false);
-  const [isStrikethrough, setIsStrikethrough] = useState(false);
-  const [isSubscript, setIsSubscript] = useState(false);
-  const [isSuperscript, setIsSuperscript] = useState(false);
+  const [_isStrikethrough, setIsStrikethrough] = useState(false);
+  const [_isSubscript, setIsSubscript] = useState(false);
+  const [_isSuperscript, setIsSuperscript] = useState(false);
   const [isCode, setIsCode] = useState(false);
   const [canUndo, setCanUndo] = useState(false);
   const [canRedo, setCanRedo] = useState(false);
   const [modal] = useModal();
-  const [isRTL, setIsRTL] = useState(false);
+  const [_isRTL, setIsRTL] = useState(false);
   const [codeLanguage, setCodeLanguage] = useState<string>('');
   const [isEditable, setIsEditable] = useState(() => editor.isEditable());
 
