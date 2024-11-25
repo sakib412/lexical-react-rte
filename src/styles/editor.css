@@ -27,7 +27,8 @@
 .editor-inner {
   background: #fff;
   position: relative;
-  border: 1px solid #ddd;
+  border: 1px solid #eee;
+  border-top: none;
 }
 
 .editor-input {

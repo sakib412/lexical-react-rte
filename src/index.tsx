@@ -15,6 +15,7 @@ function Editor() {
   const [, setIsLinkEditMode] = useState<boolean>(false);
   return (
     <LexicalComposer initialConfig={editorDefaultConfig}>
+      <ToolbarPlugin setIsLinkEditMode={setIsLinkEditMode} />
       <div className="editor-container">
         <div className="editor-inner">
           <RichTextPlugin
@@ -24,7 +25,6 @@ function Editor() {
           />
           <AutoFocusPlugin />
           <HistoryPlugin />
-          <ToolbarPlugin setIsLinkEditMode={setIsLinkEditMode} />
         </div>
       </div>
     </LexicalComposer>
