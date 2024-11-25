@@ -9,32 +9,32 @@ importers:
   .:
     dependencies:
       '@lexical/code':
-        specifier: 0.18.0
-        version: 0.18.0
+        specifier: 0.20.0
+        version: 0.20.0
       '@lexical/link':
-        specifier: 0.18.0
-        version: 0.18.0
+        specifier: 0.20.0
+        version: 0.20.0
       '@lexical/list':
-        specifier: 0.18.0
-        version: 0.18.0
+        specifier: 0.20.0
+        version: 0.20.0
       '@lexical/react':
-        specifier: 0.18.0
-        version: 0.18.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.18)
+        specifier: 0.20.0
+        version: 0.20.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.18)
       '@lexical/rich-text':
-        specifier: 0.18.0
-        version: 0.18.0
+        specifier: 0.20.0
+        version: 0.20.0
       '@lexical/selection':
-        specifier: 0.18.0
-        version: 0.18.0
+        specifier: 0.20.0
+        version: 0.20.0
       '@lexical/table':
-        specifier: 0.18.0
-        version: 0.18.0
+        specifier: 0.20.0
+        version: 0.20.0
       '@lexical/utils':
-        specifier: 0.18.0
-        version: 0.18.0
+        specifier: 0.20.0
+        version: 0.20.0
       lexical:
-        specifier: 0.18.0
-        version: 0.18.0
+        specifier: 0.20.0
+        version: 0.20.0
       react:
         specifier: ^18.2.0
         version: 18.3.1
@@ -43,11 +43,11 @@ importers:
         version: 18.3.1(react@18.3.1)
     devDependencies:
       '@types/node':
-        specifier: ^22.7.8
-        version: 22.7.8
+        specifier: ^22.9.3
+        version: 22.9.3
       '@types/react':
-        specifier: ^18.3.11
-        version: 18.3.11
+        specifier: ^18.3.12
+        version: 18.3.12
       '@types/react-dom':
         specifier: ^18.3.1
         version: 18.3.1
@@ -59,7 +59,7 @@ importers:
         version: 7.18.0(eslint@8.57.0)(typescript@5.6.3)
       '@vitejs/plugin-react':
         specifier: ^4.3.3
-        version: 4.3.3(vite@5.4.9(@types/node@22.7.8))
+        version: 4.3.3(vite@5.4.11(@types/node@22.9.3))
       eslint:
         specifier: ^8.57.0
         version: 8.57.0
@@ -76,14 +76,14 @@ importers:
         specifier: ^5.6.3
         version: 5.6.3
       vite:
-        specifier: ^5.4.9
-        version: 5.4.9(@types/node@22.7.8)
+        specifier: ^5.4.11
+        version: 5.4.11(@types/node@22.9.3)
       vite-plugin-dts:
-        specifier: ^4.2.4
-        version: 4.2.4(@types/node@22.7.8)(rollup@4.21.1)(typescript@5.6.3)(vite@5.4.9(@types/node@22.7.8))
+        specifier: ^4.3.0
+        version: 4.3.0(@types/node@22.9.3)(rollup@4.21.1)(typescript@5.6.3)(vite@5.4.11(@types/node@22.9.3))
       vite-plugin-lib-inject-css:
         specifier: ^2.1.1
-        version: 2.1.1(vite@5.4.9(@types/node@22.7.8))
+        version: 2.1.1(vite@5.4.11(@types/node@22.9.3))
 
 packages:
 
@@ -421,89 +421,89 @@ packages:
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
-  '@lexical/clipboard@0.18.0':
-    resolution: {integrity: sha512-ybc+hx14wj0n2ZjdOkLcZ02MRB3UprXjpLDXlByFIuVcZpUxVcp3NzA0UBPOKXYKvdt0bmgjnAsFWM5OSbwS0w==}
+  '@lexical/clipboard@0.20.0':
+    resolution: {integrity: sha512-oHmb9kSVHjeFCd2q8VrEXW22doUHMJ6cGXqo7Ican7Ljl4/9OgRWr+cq55yntoSaJfCrRYkTiZCLDejF2ciSiA==}
 
-  '@lexical/code@0.18.0':
-    resolution: {integrity: sha512-VB8fRHIrB8QTqyZUvGBMVWP2tpKe3ArOjPdWAqgrS8MVFldqUhuTHcW+XJFkVxcEBYCXynNT29YRYtQhfQ+vDQ==}
+  '@lexical/code@0.20.0':
+    resolution: {integrity: sha512-zFsVGuzIn4CQxEnlW4AG/Hq6cyATVZ4fZTxozE/f5oK4vDPvnY/goRxrzSuAMX73A/HRX3kTEzMDcm4taRM3Mg==}
 
-  '@lexical/devtools-core@0.18.0':
-    resolution: {integrity: sha512-gVgtEkLwGjz1frOmDpFJzDPFxPgAcC9n5ZaaZWHo5GLcptnQmkuLm1t+UInQWujXhFmcyJzfiqDaMJ8EIcb2Ww==}
+  '@lexical/devtools-core@0.20.0':
+    resolution: {integrity: sha512-/CnL+Dfpzw4koy2BTdUICkvrCkMIYG8Y73KB/S1Bt5UzJpD+PV300puWJ0NvUvAj24H78r73jxvK2QUG67Tdaw==}
     peerDependencies:
       react: '>=17.x'
       react-dom: '>=17.x'
 
-  '@lexical/dragon@0.18.0':
-    resolution: {integrity: sha512-toD/y2/TgtG+eFVKXf65kDk/Mv02FwgmcGH18nyAabZnO1TLBaMYPkGFdTTZ8hVmQxqIu9nZuLWUbdIBMs8UWw==}
+  '@lexical/dragon@0.20.0':
+    resolution: {integrity: sha512-3DAHF8mSKiPZtXCqu2P8ynSwS3fGXzg4G/V0lXNjBxhmozjzUzWZRWIWtmTlWdEu9GXsoyeM3agcaxyDPJJwkA==}
 
-  '@lexical/hashtag@0.18.0':
-    resolution: {integrity: sha512-bm+Sv7keguVYbUY0ngd+iAv2Owd3dePzdVkzkmw9Al8GPXkE5ll8fjq6Xjw2u3OVhf+9pTnesIo/AS7H+h0exw==}
+  '@lexical/hashtag@0.20.0':
+    resolution: {integrity: sha512-ldOP/d9tA6V9qvLyr3mRYkcYY5ySOHJ2BFOW/jZPxQcj6lWafS8Lk7XdMUpHHDjRpY2Hizsi5MHJkIqFglYXbw==}
 
-  '@lexical/history@0.18.0':
-    resolution: {integrity: sha512-c87J4ke1Sae03coElJay2Ikac/4OcA2OmhtNbt2gAi/XBtcsP4mPuz1yZfZf9XIe+weekObgjinvZekQ2AFw0g==}
+  '@lexical/history@0.20.0':
+    resolution: {integrity: sha512-dXtIS31BU6RmLX2KwLAi1EgGl+USeyi+rshh19azACXHPFqONZgPd2t21LOLSFn7C1/W+cSp/kqVDlQVbZUZRA==}
 
-  '@lexical/html@0.18.0':
-    resolution: {integrity: sha512-8lhba1DFnnobXgYm4Rk5Gr2tZedD4Gl6A/NKCt7whO/CET63vT3UnK2ggcVVgtIJG530Cv0bdZoJbJu5DauI5w==}
+  '@lexical/html@0.20.0':
+    resolution: {integrity: sha512-ob7QHkEv+mhaZjlurDj90UmEyN9G4rzBPR5QV42PLnu1qMSviMEdI5V3a5/A5aFf/FDDQ+0GAgWBFnA/MEDczQ==}
 
-  '@lexical/link@0.18.0':
-    resolution: {integrity: sha512-GCYcbNTSTwJk0lr+GMc8nn6Meq44BZs3QL2d1B0skpZAspd8yI53sRS6HDy5P+jW5P0dzyZr/XJAU4U+7zsEEg==}
+  '@lexical/link@0.20.0':
+    resolution: {integrity: sha512-zicDcfgRZPRFZ8WOZv5er0Aqkde+i7QoFVkLQD4dNLLORjoMSJOISJH6VEdjBl3k7QJTxbfrt+xT5d/ZsAN5GA==}
 
-  '@lexical/list@0.18.0':
-    resolution: {integrity: sha512-DEWs9Scbg3+STZeE2O0OoG8SWnKnxQccObBzyeHRjn4GAN6JA7lgcAzfrdgp0fNWTbMM/ku876MmXKGnqhvg9Q==}
+  '@lexical/list@0.20.0':
+    resolution: {integrity: sha512-ufSse8ui3ooUe0HA/yF/9STrG8wYhIDLMRhELOw80GFCkPJaxs6yRvjfmJooH5IC88rpUJ5XXFFiZKfGxEZLEw==}
 
-  '@lexical/mark@0.18.0':
-    resolution: {integrity: sha512-QA4YWfTP5WWnCnoH/RmfcsSZyhhd7oeFWDpfP7S8Bbmhz6kiPwGcsVr+uRQBBT56AqEX167xX2rX8JR6FiYZqA==}
+  '@lexical/mark@0.20.0':
+    resolution: {integrity: sha512-1P2izmkgZ4VDp+49rWO1KfWivL5aA30y5kkYbFZ/CS05fgbO7ogMjLSajpz+RN/zzW79v3q4YfikrMgaD23InA==}
 
-  '@lexical/markdown@0.18.0':
-    resolution: {integrity: sha512-uSWwcK8eJw5C+waEhU5WoX8W+JxNZbKuFnZwsn5nsp+iQgqMj4qY6g0yJub4sq8vvh6jjl4vVXhXTq2up9aykw==}
+  '@lexical/markdown@0.20.0':
+    resolution: {integrity: sha512-ZoGsECejp9z6MEvc8l81b1h1aWbB3sTq6xOFeUTbDL5vKpA67z5CmQQLi0uZWrygrbO9dSE3Q/JGcodUrczxbw==}
 
-  '@lexical/offset@0.18.0':
-    resolution: {integrity: sha512-KGlboyLSxQAH5PMOlJmyvHlbYXZneVnKiHpfyBV5IUX5kuyB/eZbQEYcJP9saekfQ5Xb1FWXWmsZEo+sWtrrZA==}
+  '@lexical/offset@0.20.0':
+    resolution: {integrity: sha512-VMhxsxxDGnpVw0jgC8UlDf0Q2RHIHbS49uZgs3l9nP+O+G8s3b76Ta4Tb+iJOK2FY6874/TcQMbSuXGhfpQk8A==}
 
-  '@lexical/overflow@0.18.0':
-    resolution: {integrity: sha512-3ATTwttVgZtVLq60ZUWbpbXBbpuMa3PZD5CxSP3nulviL+2I4phvacV4WUN+8wMeq+PGmuarl+cYfrFL02ii3g==}
+  '@lexical/overflow@0.20.0':
+    resolution: {integrity: sha512-z4lElzLm1FVifc7bzBZN4VNKeTuwygpyHQvCJVWXzF2Kbvex43PEYMi8u4A83idVqbmzbyBLASwUJS0voLoPLw==}
 
-  '@lexical/plain-text@0.18.0':
-    resolution: {integrity: sha512-L6yQpiwW0ZacY1oNwvRBxSuW2TZaUcveZLheJc8JzGcZoVxzII/CAbLZG8691VbNuKsbOURiNXZIsgwujKmo4Q==}
+  '@lexical/plain-text@0.20.0':
+    resolution: {integrity: sha512-LvoC+9mm2Im1iO8GgtgaqSfW0T3mIE5GQl1xGxbVNdANmtHmBgRAJn2KfQm1XHZP6zydLRMhZkzC+jfInh2yfQ==}
 
-  '@lexical/react@0.18.0':
-    resolution: {integrity: sha512-DLvIbTsjvFIFqm+9zvAjEwuZHAbSxzZf1AGqf1lLctlL/Ran0f+8EZOv5jttELTe7xISZ2+xSXTLRfyxhNwGXQ==}
+  '@lexical/react@0.20.0':
+    resolution: {integrity: sha512-5QbN5AFtZ9efXxU/M01ADhUZgthR0e8WKi5K/w5EPpWtYFDPQnUte3rKUjYJ7uwG1iwcvaCpuMbxJjHQ+i6pDQ==}
     peerDependencies:
       react: '>=17.x'
       react-dom: '>=17.x'
 
-  '@lexical/rich-text@0.18.0':
-    resolution: {integrity: sha512-xMANCB7WueMsmWK8qxik5FZN4ApyaHWHQILS9r4FTbdv/DlNepsR7Pt8kg2317xZ56NAueQLIdyyKYXG1nBrHw==}
+  '@lexical/rich-text@0.20.0':
+    resolution: {integrity: sha512-BR1pACdMA+Ymef0f5EN1y+9yP8w7S+9MgmBP1yjr3w4KdqRnfSaGWyxwcHU8eA+zu16QfivpB6501VJ90YeuXw==}
 
-  '@lexical/selection@0.18.0':
-    resolution: {integrity: sha512-mJoMhmxeZLfM9K2JMYETs9u179IkHQUlgtYG5GZJHjKx2iUn+9KvJ9RVssq+Lusi7C/N42wWPGNHDPdUvFtxXg==}
+  '@lexical/selection@0.20.0':
+    resolution: {integrity: sha512-YnkH5UCMNN/em95or/6uwAV31vcENh1Roj+JOg5KD+gJuA7VGdDCy0vZl/o0+1badXozeZ2VRxXNC6JSK7T4+A==}
 
-  '@lexical/table@0.18.0':
-    resolution: {integrity: sha512-TeTAnuFAAgVjm1QE8adRB3GFWN+DUUiS4vzGq+ynPRCtNdpmW27NmTkRMyxKsetUtt7nIFfj4DvLvor4RwqIpA==}
+  '@lexical/table@0.20.0':
+    resolution: {integrity: sha512-qHuK2rvQUoQDx62YpvJE3Ev4yK9kjRFo79IDBapxrhoXg/wCGQOjMBzVD3G5PWkhyl/GDnww80GwYjLloQLQzg==}
 
-  '@lexical/text@0.18.0':
-    resolution: {integrity: sha512-MTHSBeq3K0+lqSsP5oysBMnY4tPVhB8kAa2xBnEc3dYgXFxEEvJwZahbHNX93EPObtJkxXfUuI63Al4G3lYK8A==}
+  '@lexical/text@0.20.0':
+    resolution: {integrity: sha512-Fu64i5CIlEOlgucSdp9XFqB2XqoRsw4at76n93+6RF4+LgGDnu4nLXQVCVxNmLcGyh2WgczuTpnk5P2mHNAIUA==}
 
-  '@lexical/utils@0.18.0':
-    resolution: {integrity: sha512-4s9dVpBZjqIaA/1q2GtfWFjKsv2Wqhjer0Zw2mcl1TIVN0zreXxcTKN316QppAWmSQJxVGvkWHjjaZJwl6/TSw==}
+  '@lexical/utils@0.20.0':
+    resolution: {integrity: sha512-sXIa2nowrNxY8VcjjuxZbJ/HovIql8bmInNaxBR03JAYfqMiL5I5/dYgjOQJV49NJnuR1uTY2GwVxVTXCTFUCw==}
 
-  '@lexical/yjs@0.18.0':
-    resolution: {integrity: sha512-rl7Rl9XIb3ygQEEHOFtACdXs3BE+UUUmdyNqB6kK9A6IRGz+w4Azp+qzt8It/t+c0oaSYHpAtcLNXg1amJz+kA==}
+  '@lexical/yjs@0.20.0':
+    resolution: {integrity: sha512-TiHNhu2VkhXN69V+fXVS3xjOQ6aLnheQUGwOAhuFkDPL3VLCb0yl2Mgydpayn+3Grwii4ZBHcF7oCC84GiU5bw==}
     peerDependencies:
       yjs: '>=13.5.22'
 
-  '@microsoft/api-extractor-model@7.29.6':
-    resolution: {integrity: sha512-gC0KGtrZvxzf/Rt9oMYD2dHvtN/1KPEYsrQPyMKhLHnlVuO/f4AFN3E4toqZzD2pt4LhkKoYmL2H9tX3yCOyRw==}
+  '@microsoft/api-extractor-model@7.30.0':
+    resolution: {integrity: sha512-26/LJZBrsWDKAkOWRiQbdVgcfd1F3nyJnAiJzsAgpouPk7LtOIj7PK9aJtBaw/pUXrkotEg27RrT+Jm/q0bbug==}
 
-  '@microsoft/api-extractor@7.47.7':
-    resolution: {integrity: sha512-fNiD3G55ZJGhPOBPMKD/enozj8yxJSYyVJWxRWdcUtw842rvthDHJgUWq9gXQTensFlMHv2wGuCjjivPv53j0A==}
+  '@microsoft/api-extractor@7.48.0':
+    resolution: {integrity: sha512-FMFgPjoilMUWeZXqYRlJ3gCVRhB7WU/HN88n8OLqEsmsG4zBdX/KQdtJfhq95LQTQ++zfu0Em1LLb73NqRCLYQ==}
     hasBin: true
 
-  '@microsoft/tsdoc-config@0.17.0':
-    resolution: {integrity: sha512-v/EYRXnCAIHxOHW+Plb6OWuUoMotxTN0GLatnpOb1xq0KuTNw/WI3pamJx/UbsoJP5k9MCw1QxvvhPcF9pH3Zg==}
+  '@microsoft/tsdoc-config@0.17.1':
+    resolution: {integrity: sha512-UtjIFe0C6oYgTnad4q1QP4qXwLhe6tIpNTRStJ2RZEPIkqQPREAwE5spzVxsdn9UaEMUqhh0AqSx3X4nWAKXWw==}
 
-  '@microsoft/tsdoc@0.15.0':
-    resolution: {integrity: sha512-HZpPoABogPvjeJOdzCOSJsXeL/SMCBgBZMVC3X3d7YYp2gf31MfxhUoYUNwf1ERPJOnQc0wkFn9trqI6ZEdZuA==}
+  '@microsoft/tsdoc@0.15.1':
+    resolution: {integrity: sha512-4aErSrCR/On/e5G2hDP0wjooqDdauzEbIq8hIkIe5pXV0rtWJZvdCEKL0ykZxex+IxIwBp0eGeV48hQN07dXtw==}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -606,8 +606,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@rushstack/node-core-library@5.7.0':
-    resolution: {integrity: sha512-Ff9Cz/YlWu9ce4dmqNBZpA45AEya04XaBFIjV7xTVeEf+y/kTjEasmozqFELXlNG4ROdevss75JrrZ5WgufDkQ==}
+  '@rushstack/node-core-library@5.10.0':
+    resolution: {integrity: sha512-2pPLCuS/3x7DCd7liZkqOewGM0OzLyCacdvOe8j6Yrx9LkETGnxul1t7603bIaB8nUAooORcct9fFDOQMbWAgw==}
     peerDependencies:
       '@types/node': '*'
     peerDependenciesMeta:
@@ -617,16 +617,16 @@ packages:
   '@rushstack/rig-package@0.5.3':
     resolution: {integrity: sha512-olzSSjYrvCNxUFZowevC3uz8gvKr3WTpHQ7BkpjtRpA3wK+T0ybep/SRUMfr195gBzJm5gaXw0ZMgjIyHqJUow==}
 
-  '@rushstack/terminal@0.14.0':
-    resolution: {integrity: sha512-juTKMAMpTIJKudeFkG5slD8Z/LHwNwGZLtU441l/u82XdTBfsP+LbGKJLCNwP5se+DMCT55GB8x9p6+C4UL7jw==}
+  '@rushstack/terminal@0.14.3':
+    resolution: {integrity: sha512-csXbZsAdab/v8DbU1sz7WC2aNaKArcdS/FPmXMOXEj/JBBZMvDK0+1b4Qao0kkG0ciB1Qe86/Mb68GjH6/TnMw==}
     peerDependencies:
       '@types/node': '*'
     peerDependenciesMeta:
       '@types/node':
         optional: true
 
-  '@rushstack/ts-command-line@4.22.6':
-    resolution: {integrity: sha512-QSRqHT/IfoC5nk9zn6+fgyqOPXHME0BfchII9EUPR19pocsNp/xSbeBCbD3PIR2Lg+Q5qk7OFqk1VhWPMdKHJg==}
+  '@rushstack/ts-command-line@4.23.1':
+    resolution: {integrity: sha512-40jTmYoiu/xlIpkkRsVfENtBq4CW3R4azbL0Vmda+fMwHWqss6wwf/Cy/UJmMqIzpfYc2OTnjYP1ZLD3CmyeCA==}
 
   '@types/argparse@1.0.38':
     resolution: {integrity: sha512-ebDJ9b0e702Yr7pWgB0jzm+CX4Srzz8RcXtLJDJB+BSccqMa36uyH/zUsSYao5+BD1ytv3k3rPYCq4mAE1hsXA==}
@@ -646,8 +646,8 @@ packages:
   '@types/estree@1.0.5':
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
 
-  '@types/node@22.7.8':
-    resolution: {integrity: sha512-a922jJy31vqR5sk+kAdIENJjHblqcZ4RmERviFsER4WJcEONqxKcjNOlk0q7OUfrF5sddT+vng070cdfMlrPLg==}
+  '@types/node@22.9.3':
+    resolution: {integrity: sha512-F3u1fs/fce3FFk+DAxbxc78DF8x0cY09RRL8GnXLmkJ1jvx3TtPdWoTT5/NiYfI5ASqXBmfqJi9dZ3gxMx4lzw==}
 
   '@types/prop-types@15.7.12':
     resolution: {integrity: sha512-5zvhXYtRNRluoE/jAp4GVsSduVUzNWKkOZrCDBWYtE7biZywwdC2AcEzg+cSMLFRfVgeAFqpfNabiPjxFddV1Q==}
@@ -655,8 +655,8 @@ packages:
   '@types/react-dom@18.3.1':
     resolution: {integrity: sha512-qW1Mfv8taImTthu4KoXgDfLuk4bydU6Q/TkADnDWWHwi4NX4BR+LWfTp2sVmTqRrsHvyDDTelgelxJ+SsejKKQ==}
 
-  '@types/react@18.3.11':
-    resolution: {integrity: sha512-r6QZ069rFTjrEYgFdOck1gK7FLVsgJE7tTz0pQBczlBNUhBNk0MQH4UbnFSwjpQLMkLzgqvBBa+qGpLje16eTQ==}
+  '@types/react@18.3.12':
+    resolution: {integrity: sha512-D2wOSq/d6Agt28q7rSI3jhU7G6aiuzljDGZ2hTZHIkrTLUI+AF3WMeKkEZ9nN2fkBAlcktT6vcZjDFiIhMYEQw==}
 
   '@typescript-eslint/eslint-plugin@7.18.0':
     resolution: {integrity: sha512-94EQTWZ40mzBc42ATNIBimBEDltSJ9RQHCC8vc/PDbxi4k8dVwUAv4o98dk50M1zB+JGFxp43FP7f8+FP8R6Sw==}
@@ -1168,8 +1168,8 @@ packages:
     resolution: {integrity: sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ==}
     engines: {node: '>= 0.8.0'}
 
-  lexical@0.18.0:
-    resolution: {integrity: sha512-3K/B0RpzjoW+Wj2E455wWXxkqxqK8UgdIiuqkOqdOsoSSo5mCkHOU6eVw7Nlmlr1MFvAMzGmz4RPn8NZaLQ2Mw==}
+  lexical@0.20.0:
+    resolution: {integrity: sha512-lJEHLFACXqRf3u/VlIOu9T7MJ51O4la92uOBwiS9Sx+juDK3Nrru5Vgl1aUirV1qK8XEM3h6Org2HcrsrzZ3ZA==}
 
   lib0@0.2.97:
     resolution: {integrity: sha512-Q4d1ekgvufi9FiHkkL46AhecfNjznSL9MRNoJRQ76gBHS9OqU2ArfQK0FvBpuxgWeJeNI0LVgAYMIpsGeX4gYg==}
@@ -1496,8 +1496,8 @@ packages:
   uri-js@4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
 
-  vite-plugin-dts@4.2.4:
-    resolution: {integrity: sha512-REcYoxO90Pi8c0P1J7XAa/nVwNVGkX2eYkBEIfFSfcKE4g1W8sB0R23a7SU3aLEMfdOdb0SVHq3JlJ+Qb6gjgA==}
+  vite-plugin-dts@4.3.0:
+    resolution: {integrity: sha512-LkBJh9IbLwL6/rxh0C1/bOurDrIEmRE7joC+jFdOEEciAFPbpEKOLSAr5nNh5R7CJ45cMbksTrFfy52szzC5eA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       typescript: '*'
@@ -1511,8 +1511,8 @@ packages:
     peerDependencies:
       vite: '*'
 
-  vite@5.4.9:
-    resolution: {integrity: sha512-20OVpJHh0PAM0oSOELa5GaZNWeDjcAvQjGXy2Uyr+Tp+/D2/Hdz6NLgpJLsarPTA2QJ6v8mX2P1ZfbsSKvdMkg==}
+  vite@5.4.11:
+    resolution: {integrity: sha512-c7jFQRklXua0mTzneGW9QVyxFjUgwcihC4bXEtujIo2ouWCe1Ajt/amn2PCxYnhYfd5k09JX3SB7OYWFKYqj8Q==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -1862,170 +1862,170 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@lexical/clipboard@0.18.0':
+  '@lexical/clipboard@0.20.0':
     dependencies:
-      '@lexical/html': 0.18.0
-      '@lexical/list': 0.18.0
-      '@lexical/selection': 0.18.0
-      '@lexical/utils': 0.18.0
-      lexical: 0.18.0
+      '@lexical/html': 0.20.0
+      '@lexical/list': 0.20.0
+      '@lexical/selection': 0.20.0
+      '@lexical/utils': 0.20.0
+      lexical: 0.20.0
 
-  '@lexical/code@0.18.0':
+  '@lexical/code@0.20.0':
     dependencies:
-      '@lexical/utils': 0.18.0
-      lexical: 0.18.0
+      '@lexical/utils': 0.20.0
+      lexical: 0.20.0
       prismjs: 1.29.0
 
-  '@lexical/devtools-core@0.18.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@lexical/devtools-core@0.20.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@lexical/html': 0.18.0
-      '@lexical/link': 0.18.0
-      '@lexical/mark': 0.18.0
-      '@lexical/table': 0.18.0
-      '@lexical/utils': 0.18.0
-      lexical: 0.18.0
+      '@lexical/html': 0.20.0
+      '@lexical/link': 0.20.0
+      '@lexical/mark': 0.20.0
+      '@lexical/table': 0.20.0
+      '@lexical/utils': 0.20.0
+      lexical: 0.20.0
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@lexical/dragon@0.18.0':
+  '@lexical/dragon@0.20.0':
     dependencies:
-      lexical: 0.18.0
+      lexical: 0.20.0
 
-  '@lexical/hashtag@0.18.0':
+  '@lexical/hashtag@0.20.0':
     dependencies:
-      '@lexical/utils': 0.18.0
-      lexical: 0.18.0
+      '@lexical/utils': 0.20.0
+      lexical: 0.20.0
 
-  '@lexical/history@0.18.0':
+  '@lexical/history@0.20.0':
     dependencies:
-      '@lexical/utils': 0.18.0
-      lexical: 0.18.0
+      '@lexical/utils': 0.20.0
+      lexical: 0.20.0
 
-  '@lexical/html@0.18.0':
+  '@lexical/html@0.20.0':
     dependencies:
-      '@lexical/selection': 0.18.0
-      '@lexical/utils': 0.18.0
-      lexical: 0.18.0
+      '@lexical/selection': 0.20.0
+      '@lexical/utils': 0.20.0
+      lexical: 0.20.0
 
-  '@lexical/link@0.18.0':
+  '@lexical/link@0.20.0':
     dependencies:
-      '@lexical/utils': 0.18.0
-      lexical: 0.18.0
+      '@lexical/utils': 0.20.0
+      lexical: 0.20.0
 
-  '@lexical/list@0.18.0':
+  '@lexical/list@0.20.0':
     dependencies:
-      '@lexical/utils': 0.18.0
-      lexical: 0.18.0
+      '@lexical/utils': 0.20.0
+      lexical: 0.20.0
 
-  '@lexical/mark@0.18.0':
+  '@lexical/mark@0.20.0':
     dependencies:
-      '@lexical/utils': 0.18.0
-      lexical: 0.18.0
+      '@lexical/utils': 0.20.0
+      lexical: 0.20.0
 
-  '@lexical/markdown@0.18.0':
+  '@lexical/markdown@0.20.0':
     dependencies:
-      '@lexical/code': 0.18.0
-      '@lexical/link': 0.18.0
-      '@lexical/list': 0.18.0
-      '@lexical/rich-text': 0.18.0
-      '@lexical/text': 0.18.0
-      '@lexical/utils': 0.18.0
-      lexical: 0.18.0
+      '@lexical/code': 0.20.0
+      '@lexical/link': 0.20.0
+      '@lexical/list': 0.20.0
+      '@lexical/rich-text': 0.20.0
+      '@lexical/text': 0.20.0
+      '@lexical/utils': 0.20.0
+      lexical: 0.20.0
 
-  '@lexical/offset@0.18.0':
+  '@lexical/offset@0.20.0':
     dependencies:
-      lexical: 0.18.0
+      lexical: 0.20.0
 
-  '@lexical/overflow@0.18.0':
+  '@lexical/overflow@0.20.0':
     dependencies:
-      lexical: 0.18.0
+      lexical: 0.20.0
 
-  '@lexical/plain-text@0.18.0':
+  '@lexical/plain-text@0.20.0':
     dependencies:
-      '@lexical/clipboard': 0.18.0
-      '@lexical/selection': 0.18.0
-      '@lexical/utils': 0.18.0
-      lexical: 0.18.0
+      '@lexical/clipboard': 0.20.0
+      '@lexical/selection': 0.20.0
+      '@lexical/utils': 0.20.0
+      lexical: 0.20.0
 
-  '@lexical/react@0.18.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.18)':
+  '@lexical/react@0.20.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.18)':
     dependencies:
-      '@lexical/clipboard': 0.18.0
-      '@lexical/code': 0.18.0
-      '@lexical/devtools-core': 0.18.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@lexical/dragon': 0.18.0
-      '@lexical/hashtag': 0.18.0
-      '@lexical/history': 0.18.0
-      '@lexical/link': 0.18.0
-      '@lexical/list': 0.18.0
-      '@lexical/mark': 0.18.0
-      '@lexical/markdown': 0.18.0
-      '@lexical/overflow': 0.18.0
-      '@lexical/plain-text': 0.18.0
-      '@lexical/rich-text': 0.18.0
-      '@lexical/selection': 0.18.0
-      '@lexical/table': 0.18.0
-      '@lexical/text': 0.18.0
-      '@lexical/utils': 0.18.0
-      '@lexical/yjs': 0.18.0(yjs@13.6.18)
-      lexical: 0.18.0
+      '@lexical/clipboard': 0.20.0
+      '@lexical/code': 0.20.0
+      '@lexical/devtools-core': 0.20.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@lexical/dragon': 0.20.0
+      '@lexical/hashtag': 0.20.0
+      '@lexical/history': 0.20.0
+      '@lexical/link': 0.20.0
+      '@lexical/list': 0.20.0
+      '@lexical/mark': 0.20.0
+      '@lexical/markdown': 0.20.0
+      '@lexical/overflow': 0.20.0
+      '@lexical/plain-text': 0.20.0
+      '@lexical/rich-text': 0.20.0
+      '@lexical/selection': 0.20.0
+      '@lexical/table': 0.20.0
+      '@lexical/text': 0.20.0
+      '@lexical/utils': 0.20.0
+      '@lexical/yjs': 0.20.0(yjs@13.6.18)
+      lexical: 0.20.0
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       react-error-boundary: 3.1.4(react@18.3.1)
     transitivePeerDependencies:
       - yjs
 
-  '@lexical/rich-text@0.18.0':
+  '@lexical/rich-text@0.20.0':
     dependencies:
-      '@lexical/clipboard': 0.18.0
-      '@lexical/selection': 0.18.0
-      '@lexical/utils': 0.18.0
-      lexical: 0.18.0
+      '@lexical/clipboard': 0.20.0
+      '@lexical/selection': 0.20.0
+      '@lexical/utils': 0.20.0
+      lexical: 0.20.0
 
-  '@lexical/selection@0.18.0':
+  '@lexical/selection@0.20.0':
     dependencies:
-      lexical: 0.18.0
+      lexical: 0.20.0
 
-  '@lexical/table@0.18.0':
+  '@lexical/table@0.20.0':
     dependencies:
-      '@lexical/clipboard': 0.18.0
-      '@lexical/utils': 0.18.0
-      lexical: 0.18.0
+      '@lexical/clipboard': 0.20.0
+      '@lexical/utils': 0.20.0
+      lexical: 0.20.0
 
-  '@lexical/text@0.18.0':
+  '@lexical/text@0.20.0':
     dependencies:
-      lexical: 0.18.0
+      lexical: 0.20.0
 
-  '@lexical/utils@0.18.0':
+  '@lexical/utils@0.20.0':
     dependencies:
-      '@lexical/list': 0.18.0
-      '@lexical/selection': 0.18.0
-      '@lexical/table': 0.18.0
-      lexical: 0.18.0
+      '@lexical/list': 0.20.0
+      '@lexical/selection': 0.20.0
+      '@lexical/table': 0.20.0
+      lexical: 0.20.0
 
-  '@lexical/yjs@0.18.0(yjs@13.6.18)':
+  '@lexical/yjs@0.20.0(yjs@13.6.18)':
     dependencies:
-      '@lexical/offset': 0.18.0
-      '@lexical/selection': 0.18.0
-      lexical: 0.18.0
+      '@lexical/offset': 0.20.0
+      '@lexical/selection': 0.20.0
+      lexical: 0.20.0
       yjs: 13.6.18
 
-  '@microsoft/api-extractor-model@7.29.6(@types/node@22.7.8)':
+  '@microsoft/api-extractor-model@7.30.0(@types/node@22.9.3)':
     dependencies:
-      '@microsoft/tsdoc': 0.15.0
-      '@microsoft/tsdoc-config': 0.17.0
-      '@rushstack/node-core-library': 5.7.0(@types/node@22.7.8)
+      '@microsoft/tsdoc': 0.15.1
+      '@microsoft/tsdoc-config': 0.17.1
+      '@rushstack/node-core-library': 5.10.0(@types/node@22.9.3)
     transitivePeerDependencies:
       - '@types/node'
 
-  '@microsoft/api-extractor@7.47.7(@types/node@22.7.8)':
+  '@microsoft/api-extractor@7.48.0(@types/node@22.9.3)':
     dependencies:
-      '@microsoft/api-extractor-model': 7.29.6(@types/node@22.7.8)
-      '@microsoft/tsdoc': 0.15.0
-      '@microsoft/tsdoc-config': 0.17.0
-      '@rushstack/node-core-library': 5.7.0(@types/node@22.7.8)
+      '@microsoft/api-extractor-model': 7.30.0(@types/node@22.9.3)
+      '@microsoft/tsdoc': 0.15.1
+      '@microsoft/tsdoc-config': 0.17.1
+      '@rushstack/node-core-library': 5.10.0(@types/node@22.9.3)
       '@rushstack/rig-package': 0.5.3
-      '@rushstack/terminal': 0.14.0(@types/node@22.7.8)
-      '@rushstack/ts-command-line': 4.22.6(@types/node@22.7.8)
+      '@rushstack/terminal': 0.14.3(@types/node@22.9.3)
+      '@rushstack/ts-command-line': 4.23.1(@types/node@22.9.3)
       lodash: 4.17.21
       minimatch: 3.0.8
       resolve: 1.22.8
@@ -2035,14 +2035,14 @@ snapshots:
     transitivePeerDependencies:
       - '@types/node'
 
-  '@microsoft/tsdoc-config@0.17.0':
+  '@microsoft/tsdoc-config@0.17.1':
     dependencies:
-      '@microsoft/tsdoc': 0.15.0
+      '@microsoft/tsdoc': 0.15.1
       ajv: 8.12.0
       jju: 1.4.0
       resolve: 1.22.8
 
-  '@microsoft/tsdoc@0.15.0': {}
+  '@microsoft/tsdoc@0.15.1': {}
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
@@ -2112,7 +2112,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.21.1':
     optional: true
 
-  '@rushstack/node-core-library@5.7.0(@types/node@22.7.8)':
+  '@rushstack/node-core-library@5.10.0(@types/node@22.9.3)':
     dependencies:
       ajv: 8.13.0
       ajv-draft-04: 1.0.0(ajv@8.13.0)
@@ -2123,23 +2123,23 @@ snapshots:
       resolve: 1.22.8
       semver: 7.5.4
     optionalDependencies:
-      '@types/node': 22.7.8
+      '@types/node': 22.9.3
 
   '@rushstack/rig-package@0.5.3':
     dependencies:
       resolve: 1.22.8
       strip-json-comments: 3.1.1
 
-  '@rushstack/terminal@0.14.0(@types/node@22.7.8)':
+  '@rushstack/terminal@0.14.3(@types/node@22.9.3)':
     dependencies:
-      '@rushstack/node-core-library': 5.7.0(@types/node@22.7.8)
+      '@rushstack/node-core-library': 5.10.0(@types/node@22.9.3)
       supports-color: 8.1.1
     optionalDependencies:
-      '@types/node': 22.7.8
+      '@types/node': 22.9.3
 
-  '@rushstack/ts-command-line@4.22.6(@types/node@22.7.8)':
+  '@rushstack/ts-command-line@4.23.1(@types/node@22.9.3)':
     dependencies:
-      '@rushstack/terminal': 0.14.0(@types/node@22.7.8)
+      '@rushstack/terminal': 0.14.3(@types/node@22.9.3)
       '@types/argparse': 1.0.38
       argparse: 1.0.10
       string-argv: 0.3.2
@@ -2171,7 +2171,7 @@ snapshots:
 
   '@types/estree@1.0.5': {}
 
-  '@types/node@22.7.8':
+  '@types/node@22.9.3':
     dependencies:
       undici-types: 6.19.8
 
@@ -2179,9 +2179,9 @@ snapshots:
 
   '@types/react-dom@18.3.1':
     dependencies:
-      '@types/react': 18.3.11
+      '@types/react': 18.3.12
 
-  '@types/react@18.3.11':
+  '@types/react@18.3.12':
     dependencies:
       '@types/prop-types': 15.7.12
       csstype: 3.1.3
@@ -2269,14 +2269,14 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
-  '@vitejs/plugin-react@4.3.3(vite@5.4.9(@types/node@22.7.8))':
+  '@vitejs/plugin-react@4.3.3(vite@5.4.11(@types/node@22.9.3))':
     dependencies:
       '@babel/core': 7.25.2
       '@babel/plugin-transform-react-jsx-self': 7.24.7(@babel/core@7.25.2)
       '@babel/plugin-transform-react-jsx-source': 7.24.7(@babel/core@7.25.2)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.2
-      vite: 5.4.9(@types/node@22.7.8)
+      vite: 5.4.11(@types/node@22.9.3)
     transitivePeerDependencies:
       - supports-color
 
@@ -2746,7 +2746,7 @@ snapshots:
       prelude-ls: 1.2.1
       type-check: 0.4.0
 
-  lexical@0.18.0: {}
+  lexical@0.20.0: {}
 
   lib0@0.2.97:
     dependencies:
@@ -3031,9 +3031,9 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
-  vite-plugin-dts@4.2.4(@types/node@22.7.8)(rollup@4.21.1)(typescript@5.6.3)(vite@5.4.9(@types/node@22.7.8)):
+  vite-plugin-dts@4.3.0(@types/node@22.9.3)(rollup@4.21.1)(typescript@5.6.3)(vite@5.4.11(@types/node@22.9.3)):
     dependencies:
-      '@microsoft/api-extractor': 7.47.7(@types/node@22.7.8)
+      '@microsoft/api-extractor': 7.48.0(@types/node@22.9.3)
       '@rollup/pluginutils': 5.1.0(rollup@4.21.1)
       '@volar/typescript': 2.4.5
       '@vue/language-core': 2.1.6(typescript@5.6.3)
@@ -3044,26 +3044,26 @@ snapshots:
       magic-string: 0.30.11
       typescript: 5.6.3
     optionalDependencies:
-      vite: 5.4.9(@types/node@22.7.8)
+      vite: 5.4.11(@types/node@22.9.3)
     transitivePeerDependencies:
       - '@types/node'
       - rollup
       - supports-color
 
-  vite-plugin-lib-inject-css@2.1.1(vite@5.4.9(@types/node@22.7.8)):
+  vite-plugin-lib-inject-css@2.1.1(vite@5.4.11(@types/node@22.9.3)):
     dependencies:
       '@ast-grep/napi': 0.22.6
       magic-string: 0.30.11
       picocolors: 1.0.1
-      vite: 5.4.9(@types/node@22.7.8)
+      vite: 5.4.11(@types/node@22.9.3)
 
-  vite@5.4.9(@types/node@22.7.8):
+  vite@5.4.11(@types/node@22.9.3):
     dependencies:
       esbuild: 0.21.5
       postcss: 8.4.47
       rollup: 4.21.1
     optionalDependencies:
-      '@types/node': 22.7.8
+      '@types/node': 22.9.3
       fsevents: 2.3.3
 
   vscode-uri@3.0.8: {}
