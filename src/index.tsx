@@ -2,7 +2,7 @@ import './styles/editor.css';
 import {useState} from 'react';
 import {LexicalComposer} from '@lexical/react/LexicalComposer';
 import {RichTextPlugin} from '@lexical/react/LexicalRichTextPlugin';
-import LexicalErrorBoundary from '@lexical/react/LexicalErrorBoundary';
+import {LexicalErrorBoundary} from '@lexical/react/LexicalErrorBoundary';
 import {ContentEditable} from '@lexical/react/LexicalContentEditable';
 import {AutoFocusPlugin} from '@lexical/react/LexicalAutoFocusPlugin';
 import {HistoryPlugin} from '@lexical/react/LexicalHistoryPlugin';
