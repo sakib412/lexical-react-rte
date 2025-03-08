@@ -68,7 +68,7 @@ import {
   SELECTION_CHANGE_COMMAND,
   UNDO_COMMAND,
 } from 'lexical';
-import {Dispatch, useCallback, useEffect, useState} from 'react';
+import {Dispatch, type JSX, useCallback, useEffect, useState} from 'react';
 import {IS_APPLE} from '../../shared/environment';
 
 import useModal from '../../hooks/useModal';

@@ -47,8 +47,8 @@ export function DropDownItem({
   const {registerItem} = dropDownContext;
 
   useEffect(() => {
-    if (ref && ref.current) {
-      registerItem(ref);
+    if (ref && ref.current && 'current' in ref) {
+      registerItem(ref as React.RefObject<HTMLButtonElement>);
     }
   }, [ref, registerItem]);
 
@@ -151,7 +151,7 @@ export default function DropDown({
   buttonLabel?: string;
   children: ReactNode;
   stopCloseOnClickSelf?: boolean;
-}): JSX.Element {
+}): React.JSX.Element {
   const dropDownRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const [showDropDown, setShowDropDown] = useState(false);

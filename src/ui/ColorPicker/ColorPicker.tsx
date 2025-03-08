@@ -8,7 +8,7 @@
 
 import './ColorPicker.css';
 
-import {useEffect, useMemo, useRef, useState} from 'react';
+import {JSX, useEffect, useMemo, useRef, useState} from 'react';
 
 import TextInput from '../TextInput/TextInput';
 

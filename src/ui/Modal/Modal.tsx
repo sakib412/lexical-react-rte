@@ -8,7 +8,7 @@
 
 import './Modal.css';
 
-import {ReactNode, useEffect, useRef} from 'react';
+import {type JSX, ReactNode, useEffect, useRef} from 'react';
 import {createPortal} from 'react-dom';
 
 function PortalImpl({
