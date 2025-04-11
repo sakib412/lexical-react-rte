@@ -59,7 +59,7 @@ importers:
         version: 7.18.0(eslint@8.57.1)(typescript@5.8.2)
       '@vitejs/plugin-react':
         specifier: ^4.3.4
-        version: 4.3.4(vite@6.2.5(@types/node@22.13.13))
+        version: 4.3.4(vite@6.2.6(@types/node@22.13.13))
       eslint:
         specifier: ^8
         version: 8.57.1
@@ -77,16 +77,16 @@ importers:
         version: 5.8.2
       vite:
         specifier: ^6.2.3
-        version: 6.2.5(@types/node@22.13.13)
+        version: 6.2.6(@types/node@22.13.13)
       vite-plugin-dts:
         specifier: ^4.5.3
-        version: 4.5.3(@types/node@22.13.13)(rollup@4.39.0)(typescript@5.8.2)(vite@6.2.5(@types/node@22.13.13))
+        version: 4.5.3(@types/node@22.13.13)(rollup@4.39.0)(typescript@5.8.2)(vite@6.2.6(@types/node@22.13.13))
       vite-plugin-lib-inject-css:
         specifier: ^2.2.1
-        version: 2.2.1(vite@6.2.5(@types/node@22.13.13))
+        version: 2.2.1(vite@6.2.6(@types/node@22.13.13))
       vite-tsconfig-paths:
         specifier: ^5.1.4
-        version: 5.1.4(typescript@5.8.2)(vite@6.2.5(@types/node@22.13.13))
+        version: 5.1.4(typescript@5.8.2)(vite@6.2.6(@types/node@22.13.13))
 
 packages:
 
@@ -1539,8 +1539,8 @@ packages:
       vite:
         optional: true
 
-  vite@6.2.5:
-    resolution: {integrity: sha512-j023J/hCAa4pRIUH6J9HemwYfjB5llR2Ps0CWeikOtdR8+pAURAk0DoJC5/mm9kd+UgdnIy7d6HE4EAvlYhPhA==}
+  vite@6.2.6:
+    resolution: {integrity: sha512-9xpjNl3kR4rVDZgPNdTL0/c6ao4km69a/2ihNQbcANz8RuCOK3hQBmLSJf3bRKVQjVMda+YvizNE8AwvogcPbw==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
     hasBin: true
     peerDependencies:
@@ -2309,14 +2309,14 @@ snapshots:
 
   '@ungap/structured-clone@1.3.0': {}
 
-  '@vitejs/plugin-react@4.3.4(vite@6.2.5(@types/node@22.13.13))':
+  '@vitejs/plugin-react@4.3.4(vite@6.2.6(@types/node@22.13.13))':
     dependencies:
       '@babel/core': 7.26.10
       '@babel/plugin-transform-react-jsx-self': 7.25.9(@babel/core@7.26.10)
       '@babel/plugin-transform-react-jsx-source': 7.25.9(@babel/core@7.26.10)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.2
-      vite: 6.2.5(@types/node@22.13.13)
+      vite: 6.2.6(@types/node@22.13.13)
     transitivePeerDependencies:
       - supports-color
 
@@ -3061,7 +3061,7 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
-  vite-plugin-dts@4.5.3(@types/node@22.13.13)(rollup@4.39.0)(typescript@5.8.2)(vite@6.2.5(@types/node@22.13.13)):
+  vite-plugin-dts@4.5.3(@types/node@22.13.13)(rollup@4.39.0)(typescript@5.8.2)(vite@6.2.6(@types/node@22.13.13)):
     dependencies:
       '@microsoft/api-extractor': 7.52.2(@types/node@22.13.13)
       '@rollup/pluginutils': 5.1.4(rollup@4.39.0)
@@ -3074,31 +3074,31 @@ snapshots:
       magic-string: 0.30.17
       typescript: 5.8.2
     optionalDependencies:
-      vite: 6.2.5(@types/node@22.13.13)
+      vite: 6.2.6(@types/node@22.13.13)
     transitivePeerDependencies:
       - '@types/node'
       - rollup
       - supports-color
 
-  vite-plugin-lib-inject-css@2.2.1(vite@6.2.5(@types/node@22.13.13)):
+  vite-plugin-lib-inject-css@2.2.1(vite@6.2.6(@types/node@22.13.13)):
     dependencies:
       '@ast-grep/napi': 0.32.3
       magic-string: 0.30.17
       picocolors: 1.1.1
-      vite: 6.2.5(@types/node@22.13.13)
+      vite: 6.2.6(@types/node@22.13.13)
 
-  vite-tsconfig-paths@5.1.4(typescript@5.8.2)(vite@6.2.5(@types/node@22.13.13)):
+  vite-tsconfig-paths@5.1.4(typescript@5.8.2)(vite@6.2.6(@types/node@22.13.13)):
     dependencies:
       debug: 4.4.0
       globrex: 0.1.2
       tsconfck: 3.1.5(typescript@5.8.2)
     optionalDependencies:
-      vite: 6.2.5(@types/node@22.13.13)
+      vite: 6.2.6(@types/node@22.13.13)
     transitivePeerDependencies:
       - supports-color
       - typescript
 
-  vite@6.2.5(@types/node@22.13.13):
+  vite@6.2.6(@types/node@22.13.13):
     dependencies:
       esbuild: 0.25.2
       postcss: 8.5.3
