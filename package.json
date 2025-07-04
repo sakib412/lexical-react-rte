@@ -49,37 +49,37 @@
     "react-dom": "^18.2.0 || ^19.0.0"
   },
   "devDependencies": {
-    "@types/node": "^22.13.13",
-    "@types/react": "^19.0.12",
-    "@types/react-dom": "^19.0.4",
+    "@types/node": "^22.16.0",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
     "@typescript-eslint/eslint-plugin": "^7",
     "@typescript-eslint/parser": "^7",
-    "@vitejs/plugin-react": "^4.3.4",
+    "@vitejs/plugin-react": "^4.6.0",
     "eslint": "^8",
     "eslint-config-prettier": "^9",
     "eslint-plugin-react-hooks": "^4",
-    "prettier": "~3.5.3",
-    "typescript": "^5.8.2",
-    "vite": "^6.2.3",
-    "vite-plugin-dts": "^4.5.3",
-    "vite-plugin-lib-inject-css": "^2.2.1",
+    "prettier": "^3.6.2",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5",
+    "vite-plugin-dts": "^4.5.4",
+    "vite-plugin-lib-inject-css": "^2.2.2",
     "vite-tsconfig-paths": "^5.1.4"
   },
   "dependencies": {
-    "@lexical/code": "0.29.0",
-    "@lexical/link": "0.29.0",
-    "@lexical/list": "0.29.0",
-    "@lexical/react": "0.29.0",
-    "@lexical/rich-text": "0.29.0",
-    "@lexical/selection": "0.29.0",
-    "@lexical/table": "0.29.0",
-    "@lexical/utils": "0.29.0",
-    "lexical": "0.29.0"
+    "@lexical/code": "0.33.0",
+    "@lexical/link": "0.33.0",
+    "@lexical/list": "0.33.0",
+    "@lexical/react": "0.33.0",
+    "@lexical/rich-text": "0.33.0",
+    "@lexical/selection": "0.33.0",
+    "@lexical/table": "0.33.0",
+    "@lexical/utils": "0.33.0",
+    "lexical": "0.33.0"
   },
   "engines": {
     "node": ">=18"
   },
-  "packageManager": "pnpm@10.6.5",
+  "packageManager": "pnpm@10.12.4",
   "pnpm": {
     "onlyBuiltDependencies": [
       "esbuild"
