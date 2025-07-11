@@ -6,10 +6,10 @@
  *
  */
 
-import './Modal.css';
-
 import {type JSX, ReactNode, useEffect, useRef} from 'react';
 import {createPortal} from 'react-dom';
+
+import './Modal.css';
 
 function PortalImpl({
   onClose,

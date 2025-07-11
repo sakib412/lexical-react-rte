@@ -5,7 +5,31 @@
  * LICENSE file in the root directory of this source tree.
  *
  */
-import './Toolbar.css';
+import {Dispatch, type JSX, useCallback, useEffect, useState} from 'react';
+import {
+  // $createParagraphNode,
+  $getNodeByKey,
+  $getSelection,
+  $isElementNode,
+  $isRangeSelection,
+  $isRootOrShadowRoot,
+  // $isTextNode,
+  CAN_REDO_COMMAND,
+  CAN_UNDO_COMMAND,
+  COMMAND_PRIORITY_CRITICAL,
+  COMMAND_PRIORITY_NORMAL,
+  ElementFormatType,
+  // FORMAT_ELEMENT_COMMAND,
+  FORMAT_TEXT_COMMAND,
+  // INDENT_CONTENT_COMMAND,
+  KEY_MODIFIER_COMMAND,
+  // LexicalEditor,
+  NodeKey,
+  // OUTDENT_CONTENT_COMMAND,
+  REDO_COMMAND,
+  SELECTION_CHANGE_COMMAND,
+  UNDO_COMMAND,
+} from 'lexical';
 
 import {
   // $createCodeNode,
@@ -44,38 +68,7 @@ import {
   $getNearestNodeOfType,
   mergeRegister,
 } from '@lexical/utils';
-import {
-  // $createParagraphNode,
-  $getNodeByKey,
-  $getSelection,
-  $isElementNode,
-  $isRangeSelection,
-  $isRootOrShadowRoot,
-  // $isTextNode,
-  CAN_REDO_COMMAND,
-  CAN_UNDO_COMMAND,
-  COMMAND_PRIORITY_CRITICAL,
-  COMMAND_PRIORITY_NORMAL,
-  ElementFormatType,
-  // FORMAT_ELEMENT_COMMAND,
-  FORMAT_TEXT_COMMAND,
-  // INDENT_CONTENT_COMMAND,
-  KEY_MODIFIER_COMMAND,
-  // LexicalEditor,
-  NodeKey,
-  // OUTDENT_CONTENT_COMMAND,
-  REDO_COMMAND,
-  SELECTION_CHANGE_COMMAND,
-  UNDO_COMMAND,
-} from 'lexical';
-import {Dispatch, type JSX, useCallback, useEffect, useState} from 'react';
-import {IS_APPLE} from '../../shared/environment';
 
-import useModal from '../../hooks/useModal';
-import DropDown, {DropDownItem} from '../../ui/DropDown';
-// import DropdownColorPicker from '../../ui/DropdownColorPicker';
-import {getSelectedNode} from '../../utils/getSelectedNode';
-import {sanitizeUrl} from '../../utils/url';
 import {
   IconBold,
   IconCode,
@@ -84,6 +77,15 @@ import {
   IconUnderline,
   IconUndo,
 } from '~/ui/icons';
+
+import useModal from '../../hooks/useModal';
+import {IS_APPLE} from '../../shared/environment';
+import DropDown, {DropDownItem} from '../../ui/DropDown';
+// import DropdownColorPicker from '../../ui/DropdownColorPicker';
+import {getSelectedNode} from '../../utils/getSelectedNode';
+import {sanitizeUrl} from '../../utils/url';
+
+import './Toolbar.css';
 
 const blockTypeToBlockName = {
   bullet: 'Bulleted List',
@@ -100,6 +102,7 @@ const blockTypeToBlockName = {
   quote: 'Quote',
 };
 
+// eslint-disable-next-line unused-imports/no-unused-vars
 const rootTypeToRootName = {
   root: 'Root',
   table: 'Table',

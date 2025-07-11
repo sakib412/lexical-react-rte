@@ -6,7 +6,7 @@
  *
  */
 
-import {useCallback, useMemo, useState, type JSX} from 'react';
+import {type JSX,useCallback, useMemo, useState} from 'react';
 
 import Modal from '../ui/Modal/Modal';
 

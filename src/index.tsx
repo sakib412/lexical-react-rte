@@ -1,15 +1,17 @@
-import './styles/editor.css';
 import {useState} from 'react';
-import {LexicalComposer} from '@lexical/react/LexicalComposer';
-import {RichTextPlugin} from '@lexical/react/LexicalRichTextPlugin';
-import {LexicalErrorBoundary} from '@lexical/react/LexicalErrorBoundary';
-import {ContentEditable} from '@lexical/react/LexicalContentEditable';
+
 import {AutoFocusPlugin} from '@lexical/react/LexicalAutoFocusPlugin';
+import {LexicalComposer} from '@lexical/react/LexicalComposer';
+import {ContentEditable} from '@lexical/react/LexicalContentEditable';
+import {LexicalErrorBoundary} from '@lexical/react/LexicalErrorBoundary';
 import {HistoryPlugin} from '@lexical/react/LexicalHistoryPlugin';
+import {RichTextPlugin} from '@lexical/react/LexicalRichTextPlugin';
 
 import editorDefaultConfig from './configs/editorDefaultConfig';
-import Placeholder from './ui/Placeholder';
 import ToolbarPlugin from './plugins/ToolbarPlugin/ToolbarPlugin';
+import Placeholder from './ui/Placeholder';
+
+import './styles/editor.css';
 
 function Editor() {
   const [, setIsLinkEditMode] = useState<boolean>(false);

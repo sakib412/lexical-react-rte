@@ -1,4 +1,5 @@
 import {InitialConfigType} from '@lexical/react/LexicalComposer';
+
 import defaultNodes from '../nodes/nodes';
 import defaultTheme from '../themes/default';
 

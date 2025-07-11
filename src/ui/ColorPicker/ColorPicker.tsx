@@ -6,11 +6,11 @@
  *
  */
 
-import './ColorPicker.css';
-
 import {JSX, useEffect, useMemo, useRef, useState} from 'react';
 
 import TextInput from '../TextInput/TextInput';
+
+import './ColorPicker.css';
 
 interface ColorPickerProps {
   color: string;
