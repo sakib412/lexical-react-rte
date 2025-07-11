@@ -40,6 +40,12 @@ export default function App() {
 
 --- 
 
+## TODO
+  - [ ] Setup release workflow with changelog and auto publish to NPM
+  - [ ] Add tests
+  - [ ] Full toolbar customization
+  - [ ] Implement slot system for toolbar
+
+
 ## Planned Features
  - 
-(will be updated soon...)
