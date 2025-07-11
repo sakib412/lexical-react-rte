@@ -41,6 +41,7 @@ export default function App() {
 --- 
 
 ## TODO
+  - [ ] Setup git hooks for pre-commit and pre-push
   - [ ] Setup release workflow with changelog and auto publish to NPM
   - [ ] Add tests
   - [ ] Full toolbar customization
