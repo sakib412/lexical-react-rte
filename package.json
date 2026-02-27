@@ -2,7 +2,7 @@
   "name": "lexical-react-rte",
   "description": "Ready editor built with lexical",
   "private": false,
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": "Najmus Sakib <nazmusakib412@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/sakib412/lexical-react-rte#readme",
@@ -22,15 +22,14 @@
   },
   "type": "module",
   "files": [
-    "dist"
+    "dist",
+    "!dist/**/*.ts.map"
   ],
-  "main": "./dist/index.umd.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.umd.cjs"
+      "import": "./dist/index.js"
     }
   },
   "publishConfig": {

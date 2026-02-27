@@ -14,6 +14,8 @@ export default defineConfig({
       entry: resolve(__dirname, 'src/index.tsx'),
       name: 'Editor',
       fileName: 'index',
+      formats: ['es'],
+      cssFileName: 'index.css',
     },
     rollupOptions: {
       external: ['react', 'react/jsx-runtime', 'react-dom'],
@@ -25,5 +27,6 @@ export default defineConfig({
       },
     },
     emptyOutDir: true,
+    sourcemap: false,
   },
 });
