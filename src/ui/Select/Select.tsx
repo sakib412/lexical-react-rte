@@ -22,11 +22,11 @@ export default function Select({
   ...other
 }: SelectProps): JSX.Element {
   return (
-    <div className="Input__wrapper">
-      <label style={{marginTop: '-1em'}} className="Input__label">
+    <div className="rte-input-wrapper">
+      <label style={{marginTop: '-1em'}} className="rte-input-label">
         {label}
       </label>
-      <select {...other} className={className || 'select'}>
+      <select {...other} className={className || 'rte-select'}>
         {children}
       </select>
     </div>

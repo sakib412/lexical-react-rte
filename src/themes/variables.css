@@ -1,0 +1,67 @@
+:root {
+  /* Typography */
+  --rte-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, sans-serif;
+  --rte-font-size: 15px;
+  --rte-line-height: 1.6;
+  --rte-text-color: #1a1a1a;
+
+  /* Editor surface */
+  --rte-bg: #ffffff;
+  --rte-border-color: #e0e0e0;
+  --rte-border-radius: 8px;
+  --rte-min-height: 150px;
+  --rte-padding: 16px;
+  --rte-focus-ring: 0 0 0 2px rgba(26, 86, 219, 0.3);
+
+  /* Toolbar */
+  --rte-toolbar-bg: #ffffff;
+  --rte-toolbar-border-color: #e0e0e0;
+  --rte-toolbar-padding: 4px 8px;
+  --rte-toolbar-gap: 2px;
+
+  /* Toolbar buttons */
+  --rte-toolbar-btn-size: 32px;
+  --rte-toolbar-btn-radius: 6px;
+  --rte-toolbar-btn-color: #555555;
+  --rte-toolbar-btn-hover-bg: #f0f0f0;
+  --rte-toolbar-btn-active-bg: #e3e8f4;
+  --rte-toolbar-btn-active-color: #1a56db;
+  --rte-toolbar-btn-disabled-opacity: 0.3;
+
+  /* Separator */
+  --rte-separator-color: #e0e0e0;
+  --rte-separator-margin: 4px;
+
+  /* Placeholder */
+  --rte-placeholder-color: #999999;
+
+  /* Floating toolbar */
+  --rte-floating-toolbar-bg: #1a1a1a;
+  --rte-floating-toolbar-color: #ffffff;
+  --rte-floating-toolbar-radius: 8px;
+  --rte-floating-toolbar-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+  /* Dropdown */
+  --rte-dropdown-bg: #ffffff;
+  --rte-dropdown-border-color: #e0e0e0;
+  --rte-dropdown-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --rte-dropdown-radius: 8px;
+  --rte-dropdown-z-index: 50;
+  --rte-dropdown-item-hover-bg: #f0f0f0;
+
+  /* Modal */
+  --rte-modal-overlay-bg: rgba(0, 0, 0, 0.5);
+  --rte-modal-bg: #ffffff;
+  --rte-modal-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  --rte-modal-radius: 12px;
+
+  /* Content */
+  --rte-link-color: #1a56db;
+  --rte-code-bg: #f5f5f5;
+  --rte-code-font-family: 'Fira Code', Menlo, Consolas, Monaco, monospace;
+  --rte-code-font-size: 13px;
+  --rte-quote-border-color: #d0d0d0;
+  --rte-quote-color: #666666;
+  --rte-hr-color: #e0e0e0;
+}

@@ -6,6 +6,8 @@
  *
  */
 
+import type {ReactNode} from 'react';
+
 import ColorPicker from './ColorPicker/ColorPicker';
 import DropDown from './DropDown';
 
@@ -14,6 +16,7 @@ type Props = {
   buttonAriaLabel?: string;
   buttonClassName: string;
   buttonIconClassName?: string;
+  buttonIcon?: ReactNode;
   buttonLabel?: string;
   title?: string;
   stopCloseOnClickSelf?: boolean;

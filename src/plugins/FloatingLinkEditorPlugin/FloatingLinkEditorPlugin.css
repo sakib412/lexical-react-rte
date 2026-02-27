@@ -1,0 +1,76 @@
+@import '../../themes/variables.css';
+
+.rte-link-editor {
+  position: absolute;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: var(--rte-dropdown-bg);
+  border: 1px solid var(--rte-dropdown-border-color);
+  border-radius: var(--rte-dropdown-radius);
+  box-shadow: var(--rte-dropdown-shadow);
+  font-size: 13px;
+  max-width: 400px;
+  width: max-content;
+}
+
+.rte-link-editor a {
+  color: var(--rte-link-color);
+  text-decoration: none;
+  word-break: break-all;
+  max-width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.rte-link-editor a:hover {
+  text-decoration: underline;
+}
+
+.rte-link-editor-input {
+  border: 1px solid var(--rte-border-color);
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 13px;
+  outline: none;
+  width: 250px;
+}
+
+.rte-link-editor-input:focus {
+  border-color: var(--rte-toolbar-btn-active-color);
+}
+
+.rte-link-editor-actions {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.rte-link-editor-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--rte-toolbar-btn-color);
+  cursor: pointer;
+  flex-shrink: 0;
+  font-size: 14px;
+}
+
+.rte-link-editor-btn:hover {
+  background: var(--rte-toolbar-btn-hover-bg);
+}
+
+.rte-link-editor-btn--remove:hover {
+  background: #fde8e8;
+  color: #dc2626;
+}

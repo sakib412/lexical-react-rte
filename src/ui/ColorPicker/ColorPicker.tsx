@@ -6,7 +6,7 @@
  *
  */
 
-import {JSX, useEffect, useMemo, useRef, useState} from 'react';
+import {type JSX, useEffect, useMemo, useRef, useState} from 'react';
 
 import TextInput from '../TextInput/TextInput';
 
@@ -66,6 +66,7 @@ export default function ColorPicker({
     if (/^#[0-9A-Fa-f]{6}$/i.test(hex)) {
       const newColor = transformColor('hex', hex);
       setSelfColor(newColor);
+      onChange?.(newColor.hex);
     }
   };
 
@@ -78,6 +79,7 @@ export default function ColorPicker({
     const newColor = transformColor('hsv', newHsv);
     setSelfColor(newColor);
     setInputColor(newColor.hex);
+    onChange?.(newColor.hex);
   };
 
   const onMoveHue = ({x}: Position) => {
@@ -86,16 +88,10 @@ export default function ColorPicker({
 
     setSelfColor(newColor);
     setInputColor(newColor.hex);
+    onChange?.(newColor.hex);
   };
 
-  useEffect(() => {
-    // Check if the dropdown is actually active
-    if (innerDivRef.current !== null && onChange) {
-      onChange(selfColor.hex);
-      setInputColor(selfColor.hex);
-    }
-  }, [selfColor, onChange]);
-
+  // Sync internal state when color prop changes (no onChange call)
   useEffect(() => {
     if (color === undefined) return;
     const newColor = transformColor('hex', color);
@@ -105,29 +101,31 @@ export default function ColorPicker({
 
   return (
     <div
-      className="color-picker-wrapper"
+      className="rte-color-picker-wrapper"
       style={{width: WIDTH}}
       ref={innerDivRef}>
       <TextInput label="Hex" onChange={onSetHex} value={inputColor} />
-      <div className="color-picker-basic-color">
+      <div className="rte-color-picker-basic-color">
         {basicColors.map((basicColor) => (
           <button
             className={basicColor === selfColor.hex ? ' active' : ''}
             key={basicColor}
             style={{backgroundColor: basicColor}}
             onClick={() => {
+              const newColor = transformColor('hex', basicColor);
               setInputColor(basicColor);
-              setSelfColor(transformColor('hex', basicColor));
+              setSelfColor(newColor);
+              onChange?.(newColor.hex);
             }}
           />
         ))}
       </div>
       <MoveWrapper
-        className="color-picker-saturation"
+        className="rte-color-picker-saturation"
         style={{backgroundColor: `hsl(${selfColor.hsv.h}, 100%, 50%)`}}
         onChange={onMoveSaturation}>
         <div
-          className="color-picker-saturation_cursor"
+          className="rte-color-picker-saturation_cursor"
           style={{
             backgroundColor: selfColor.hex,
             left: saturationPosition.x,
@@ -135,9 +133,9 @@ export default function ColorPicker({
           }}
         />
       </MoveWrapper>
-      <MoveWrapper className="color-picker-hue" onChange={onMoveHue}>
+      <MoveWrapper className="rte-color-picker-hue" onChange={onMoveHue}>
         <div
-          className="color-picker-hue_cursor"
+          className="rte-color-picker-hue_cursor"
           style={{
             backgroundColor: `hsl(${selfColor.hsv.h}, 100%, 50%)`,
             left: huePosition.x,
@@ -145,7 +143,7 @@ export default function ColorPicker({
         />
       </MoveWrapper>
       <div
-        className="color-picker-color"
+        className="rte-color-picker-color"
         style={{backgroundColor: selfColor.hex}}
       />
     </div>

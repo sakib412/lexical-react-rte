@@ -7,18 +7,18 @@
  *
  */
 
-.Input__wrapper {
+.rte-input-wrapper {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-bottom: 10px;
 }
-.Input__label {
+.rte-input-label {
   display: flex;
   flex: 1;
   color: #666;
 }
-.Input__input {
+.rte-input-input {
   display: flex;
   flex: 2;
   border: 1px solid #999;

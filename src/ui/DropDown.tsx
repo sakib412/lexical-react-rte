@@ -17,6 +17,8 @@ import {
 } from 'react';
 import {createPortal} from 'react-dom';
 
+import './DropDown.css';
+
 type DropDownContextType = {
   registerItem: (ref: React.RefObject<HTMLButtonElement>) => void;
 };
@@ -128,7 +130,7 @@ function DropDownItems({
 
   return (
     <DropDownContext.Provider value={contextValue}>
-      <div className="dropdown" ref={dropDownRef} onKeyDown={handleKeyDown}>
+      <div className="rte-dropdown" ref={dropDownRef} onKeyDown={handleKeyDown}>
         {children}
       </div>
     </DropDownContext.Provider>
@@ -141,6 +143,7 @@ export default function DropDown({
   buttonAriaLabel,
   buttonClassName,
   buttonIconClassName,
+  buttonIcon,
   children,
   stopCloseOnClickSelf,
 }: {
@@ -148,6 +151,7 @@ export default function DropDown({
   buttonAriaLabel?: string;
   buttonClassName: string;
   buttonIconClassName?: string;
+  buttonIcon?: ReactNode;
   buttonLabel?: string;
   children: ReactNode;
   stopCloseOnClickSelf?: boolean;
@@ -233,11 +237,12 @@ export default function DropDown({
         className={buttonClassName}
         onClick={() => setShowDropDown(!showDropDown)}
         ref={buttonRef}>
+        {buttonIcon}
         {buttonIconClassName && <span className={buttonIconClassName} />}
         {buttonLabel && (
-          <span className="text dropdown-button-text">{buttonLabel}</span>
+          <span className="rte-dropdown-text">{buttonLabel}</span>
         )}
-        <i className="chevron-down" />
+        <i className="rte-chevron" />
       </button>
 
       {showDropDown &&
