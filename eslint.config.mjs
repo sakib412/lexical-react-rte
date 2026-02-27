@@ -1,4 +1,4 @@
-import {globalIgnores} from 'eslint/config';
+import {defineConfig,globalIgnores} from 'eslint/config';
 import eslintConfigPrettier from 'eslint-config-prettier/flat';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
@@ -9,7 +9,7 @@ import tseslint from 'typescript-eslint';
 
 import js from '@eslint/js';
 
-const config = tseslint.config([
+const config = defineConfig([
   globalIgnores(['dist', 'build']),
   {
     files: ['src/**/*.{ts,tsx}'],
@@ -60,8 +60,8 @@ const config = tseslint.config([
         'warn',
         {
           groups: [
-            // `react` first, `next` second, then packages starting with a character
-            ['^react$', '^next', '^[a-z]'],
+            // `react` first then packages starting with a character
+            ['^react$', '^[a-z]'],
             // Packages starting with `@`
             ['^@'],
             // Packages starting with `~`
