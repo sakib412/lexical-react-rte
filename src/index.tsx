@@ -1,18 +1,18 @@
 // Editor components
-export {default as RichTextEditor} from './components/RichTextEditor';
 export {default as InlineEditor} from './components/InlineEditor';
+export {default as RichTextEditor} from './components/RichTextEditor';
 
 // Toolbar compound component
 export {Toolbar} from './toolbar/Toolbar';
 
 // Types
 export type {
-  EditorRef,
-  RichTextEditorProps,
-  InlineEditorProps,
   BaseEditorProps,
-  EditorClassNames,
   BlockType,
+  EditorClassNames,
+  EditorRef,
+  InlineEditorProps,
+  RichTextEditorProps,
   ToolbarButtonProps,
   ToolbarToggleProps,
 } from './types';

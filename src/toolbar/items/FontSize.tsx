@@ -1,6 +1,7 @@
+import {useCallback, useState} from 'react';
 import {$getSelection, $isRangeSelection} from 'lexical';
+
 import {$patchStyleText} from '@lexical/selection';
-import {useCallback, useEffect, useState} from 'react';
 
 import {useToolbarState} from '../../context/ToolbarContext';
 import {IconMinus, IconPlus} from '../../ui/icons';
@@ -11,12 +12,15 @@ const MAX_FONT_SIZE = 72;
 export default function FontSize({className}: {className?: string}) {
   const {state} = useToolbarState();
   const [inputValue, setInputValue] = useState(
-    state.fontSize.replace('px', ''),
+    state.fontSize.replace('px', '')
   );
 
-  useEffect(() => {
+  // Sync from prop during render (React-recommended pattern)
+  const [prevFontSize, setPrevFontSize] = useState(state.fontSize);
+  if (prevFontSize !== state.fontSize) {
+    setPrevFontSize(state.fontSize);
     setInputValue(state.fontSize.replace('px', ''));
-  }, [state.fontSize]);
+  }
 
   const updateFontSize = useCallback(
     (newSize: number) => {
@@ -28,7 +32,7 @@ export default function FontSize({className}: {className?: string}) {
         }
       });
     },
-    [state.activeEditor],
+    [state.activeEditor]
   );
 
   const currentSize = parseInt(state.fontSize) || 15;

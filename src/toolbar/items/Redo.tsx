@@ -11,7 +11,9 @@ export default function Redo({className}: {className?: string}) {
       type="button"
       disabled={!state.canRedo || !state.isEditable}
       className={`rte-toolbar-item ${className || ''}`.trim()}
-      onClick={() => state.activeEditor?.dispatchCommand(REDO_COMMAND, undefined)}
+      onClick={() =>
+        state.activeEditor?.dispatchCommand(REDO_COMMAND, undefined)
+      }
       title="Redo (Ctrl+Y)"
       aria-label="Redo">
       <IconRedo />

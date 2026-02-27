@@ -1,11 +1,12 @@
-import {OnChangePlugin as LexicalOnChangePlugin} from '@lexical/react/LexicalOnChangePlugin';
 import type {EditorState, LexicalEditor} from 'lexical';
+
+import {OnChangePlugin as LexicalOnChangePlugin} from '@lexical/react/LexicalOnChangePlugin';
 
 interface OnChangePluginProps {
   onChange?: (
     editorState: EditorState,
     editor: LexicalEditor,
-    tags: Set<string>,
+    tags: Set<string>
   ) => void;
 }
 

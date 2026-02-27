@@ -25,7 +25,9 @@
   color: var(--rte-toolbar-btn-color);
   cursor: pointer;
   padding: 0;
-  transition: background-color 0.15s, color 0.15s;
+  transition:
+    background-color 0.15s,
+    color 0.15s;
 }
 
 .rte-toolbar-item:hover:not(:disabled) {

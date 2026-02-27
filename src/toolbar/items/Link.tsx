@@ -1,5 +1,6 @@
-import {TOGGLE_LINK_COMMAND} from '@lexical/link';
 import {$getSelection, $isRangeSelection} from 'lexical';
+
+import {TOGGLE_LINK_COMMAND} from '@lexical/link';
 
 import {useToolbarState} from '../../context/ToolbarContext';
 import {IS_APPLE} from '../../shared/environment';
@@ -16,7 +17,10 @@ export default function Link({className}: {className?: string}) {
       state.activeEditor.update(() => {
         const selection = $getSelection();
         if ($isRangeSelection(selection)) {
-          state.activeEditor?.dispatchCommand(TOGGLE_LINK_COMMAND, sanitizeUrl('https://'));
+          state.activeEditor?.dispatchCommand(
+            TOGGLE_LINK_COMMAND,
+            sanitizeUrl('https://')
+          );
         }
       });
     } else {

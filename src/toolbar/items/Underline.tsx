@@ -12,7 +12,9 @@ export default function Underline({className}: {className?: string}) {
       type="button"
       disabled={!state.isEditable}
       className={`rte-toolbar-item ${state.isUnderline ? 'rte-toolbar-item--active' : ''} ${className || ''}`.trim()}
-      onClick={() => state.activeEditor?.dispatchCommand(FORMAT_TEXT_COMMAND, 'underline')}
+      onClick={() =>
+        state.activeEditor?.dispatchCommand(FORMAT_TEXT_COMMAND, 'underline')
+      }
       title={IS_APPLE ? 'Underline (⌘U)' : 'Underline (Ctrl+U)'}
       aria-label="Format underline"
       aria-pressed={state.isUnderline}>

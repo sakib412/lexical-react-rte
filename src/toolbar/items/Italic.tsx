@@ -12,7 +12,9 @@ export default function Italic({className}: {className?: string}) {
       type="button"
       disabled={!state.isEditable}
       className={`rte-toolbar-item ${state.isItalic ? 'rte-toolbar-item--active' : ''} ${className || ''}`.trim()}
-      onClick={() => state.activeEditor?.dispatchCommand(FORMAT_TEXT_COMMAND, 'italic')}
+      onClick={() =>
+        state.activeEditor?.dispatchCommand(FORMAT_TEXT_COMMAND, 'italic')
+      }
       title={IS_APPLE ? 'Italic (⌘I)' : 'Italic (Ctrl+I)'}
       aria-label="Format italic"
       aria-pressed={state.isItalic}>

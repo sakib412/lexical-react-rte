@@ -11,7 +11,9 @@ export default function Subscript({className}: {className?: string}) {
       type="button"
       disabled={!state.isEditable}
       className={`rte-toolbar-item ${state.isSubscript ? 'rte-toolbar-item--active' : ''} ${className || ''}`.trim()}
-      onClick={() => state.activeEditor?.dispatchCommand(FORMAT_TEXT_COMMAND, 'subscript')}
+      onClick={() =>
+        state.activeEditor?.dispatchCommand(FORMAT_TEXT_COMMAND, 'subscript')
+      }
       title="Subscript"
       aria-label="Format subscript"
       aria-pressed={state.isSubscript}>

@@ -12,7 +12,9 @@ export default function Bold({className}: {className?: string}) {
       type="button"
       disabled={!state.isEditable}
       className={`rte-toolbar-item ${state.isBold ? 'rte-toolbar-item--active' : ''} ${className || ''}`.trim()}
-      onClick={() => state.activeEditor?.dispatchCommand(FORMAT_TEXT_COMMAND, 'bold')}
+      onClick={() =>
+        state.activeEditor?.dispatchCommand(FORMAT_TEXT_COMMAND, 'bold')
+      }
       title={IS_APPLE ? 'Bold (⌘B)' : 'Bold (Ctrl+B)'}
       aria-label="Format bold"
       aria-pressed={state.isBold}>

@@ -1,15 +1,17 @@
-import {useLexicalComposerContext} from '@lexical/react/LexicalComposerContext';
-import {mergeRegister} from '@lexical/utils';
+import {useCallback, useEffect, useRef, useState} from 'react';
 import {
   $getSelection,
   $isRangeSelection,
   COMMAND_PRIORITY_LOW,
   SELECTION_CHANGE_COMMAND,
 } from 'lexical';
-import {useCallback, useEffect, useRef, useState} from 'react';
 import {createPortal} from 'react-dom';
 
+import {useLexicalComposerContext} from '@lexical/react/LexicalComposerContext';
+import {mergeRegister} from '@lexical/utils';
+
 import ToolbarPlugin from '../plugins/ToolbarPlugin';
+
 import Bold from './items/Bold';
 import Code from './items/Code';
 import Highlight from './items/Highlight';
@@ -93,8 +95,8 @@ function FloatingToolbarContent() {
           $updateToolbarVisibility();
           return false;
         },
-        COMMAND_PRIORITY_LOW,
-      ),
+        COMMAND_PRIORITY_LOW
+      )
     );
   }, [editor, $updateToolbarVisibility]);
 
@@ -122,7 +124,7 @@ function FloatingToolbarContent() {
       <Separator />
       <Link />
     </div>,
-    document.body,
+    document.body
   );
 }
 

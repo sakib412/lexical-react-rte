@@ -11,7 +11,12 @@ export default function Strikethrough({className}: {className?: string}) {
       type="button"
       disabled={!state.isEditable}
       className={`rte-toolbar-item ${state.isStrikethrough ? 'rte-toolbar-item--active' : ''} ${className || ''}`.trim()}
-      onClick={() => state.activeEditor?.dispatchCommand(FORMAT_TEXT_COMMAND, 'strikethrough')}
+      onClick={() =>
+        state.activeEditor?.dispatchCommand(
+          FORMAT_TEXT_COMMAND,
+          'strikethrough'
+        )
+      }
       title="Strikethrough"
       aria-label="Format strikethrough"
       aria-pressed={state.isStrikethrough}>

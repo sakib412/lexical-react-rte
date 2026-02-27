@@ -11,7 +11,9 @@ export default function Highlight({className}: {className?: string}) {
       type="button"
       disabled={!state.isEditable}
       className={`rte-toolbar-item ${state.isHighlight ? 'rte-toolbar-item--active' : ''} ${className || ''}`.trim()}
-      onClick={() => state.activeEditor?.dispatchCommand(FORMAT_TEXT_COMMAND, 'highlight')}
+      onClick={() =>
+        state.activeEditor?.dispatchCommand(FORMAT_TEXT_COMMAND, 'highlight')
+      }
       title="Highlight"
       aria-label="Format highlight"
       aria-pressed={state.isHighlight}>

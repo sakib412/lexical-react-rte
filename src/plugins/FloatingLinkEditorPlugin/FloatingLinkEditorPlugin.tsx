@@ -1,6 +1,4 @@
-import {$isLinkNode, TOGGLE_LINK_COMMAND} from '@lexical/link';
-import {useLexicalComposerContext} from '@lexical/react/LexicalComposerContext';
-import {$findMatchingParent, mergeRegister} from '@lexical/utils';
+import {useCallback, useEffect, useRef, useState} from 'react';
 import {
   $getSelection,
   $isRangeSelection,
@@ -8,8 +6,11 @@ import {
   KEY_ESCAPE_COMMAND,
   SELECTION_CHANGE_COMMAND,
 } from 'lexical';
-import {useCallback, useEffect, useRef, useState} from 'react';
 import {createPortal} from 'react-dom';
+
+import {$isLinkNode, TOGGLE_LINK_COMMAND} from '@lexical/link';
+import {useLexicalComposerContext} from '@lexical/react/LexicalComposerContext';
+import {$findMatchingParent, mergeRegister} from '@lexical/utils';
 
 import {getSelectedNode} from '../../utils/getSelectedNode';
 import {sanitizeUrl} from '../../utils/url';
@@ -28,7 +29,9 @@ function FloatingLinkEditor({
   const [linkUrl, setLinkUrl] = useState('');
   const [editedLinkUrl, setEditedLinkUrl] = useState('');
   const [isEditMode, setIsEditMode] = useState(false);
-  const [lastSelection, setLastSelection] = useState<ReturnType<typeof $getSelection> | null>(null);
+  const [lastSelection, setLastSelection] = useState<ReturnType<
+    typeof $getSelection
+  > | null>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   const updatePosition = useCallback(() => {
@@ -99,7 +102,7 @@ function FloatingLinkEditor({
           });
           return true;
         },
-        COMMAND_PRIORITY_LOW,
+        COMMAND_PRIORITY_LOW
       ),
       editor.registerCommand(
         KEY_ESCAPE_COMMAND,
@@ -111,8 +114,8 @@ function FloatingLinkEditor({
           }
           return false;
         },
-        COMMAND_PRIORITY_LOW,
-      ),
+        COMMAND_PRIORITY_LOW
+      )
     );
   }, [editor, $updateLinkEditor, updatePosition, isVisible]);
 
@@ -123,7 +126,7 @@ function FloatingLinkEditor({
   }, [isEditMode]);
 
   const monitorInputInteraction = (
-    event: React.KeyboardEvent<HTMLInputElement>,
+    event: React.KeyboardEvent<HTMLInputElement>
   ) => {
     if (event.key === 'Enter') {
       event.preventDefault();
@@ -216,7 +219,7 @@ function FloatingLinkEditor({
         )}
       </div>
     </div>,
-    anchorElem,
+    anchorElem
   );
 }
 

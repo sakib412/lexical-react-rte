@@ -1,10 +1,13 @@
 import {useRef, useState} from 'react';
-import {RichTextEditor, InlineEditor, Toolbar} from '.';
+
 import type {EditorRef} from './types';
+import {InlineEditor, RichTextEditor, Toolbar} from '.';
 
 function App() {
   const editorRef = useRef<EditorRef>(null);
-  const [activeTab, setActiveTab] = useState<'rich' | 'inline' | 'custom'>('rich');
+  const [activeTab, setActiveTab] = useState<'rich' | 'inline' | 'custom'>(
+    'rich'
+  );
 
   const handleGetHTML = () => {
     if (editorRef.current) {
@@ -77,7 +80,9 @@ function App() {
       {/* Inline Editor — floating toolbar on selection */}
       {activeTab === 'inline' && (
         <div>
-          <h2 style={{fontSize: 18, marginBottom: 12}}>Floating Toolbar on Selection</h2>
+          <h2 style={{fontSize: 18, marginBottom: 12}}>
+            Floating Toolbar on Selection
+          </h2>
           <p style={{color: '#888', fontSize: 13, marginBottom: 8}}>
             Select text to see the floating toolbar appear.
           </p>
@@ -91,8 +96,12 @@ function App() {
       {/* Custom Toolbar — compound components */}
       {activeTab === 'custom' && (
         <div>
-          <h2 style={{fontSize: 18, marginBottom: 12}}>Custom Toolbar Layout</h2>
-          <RichTextEditor ref={editorRef} placeholder="Minimal toolbar example...">
+          <h2 style={{fontSize: 18, marginBottom: 12}}>
+            Custom Toolbar Layout
+          </h2>
+          <RichTextEditor
+            ref={editorRef}
+            placeholder="Minimal toolbar example...">
             <Toolbar>
               <Toolbar.Undo />
               <Toolbar.Redo />
