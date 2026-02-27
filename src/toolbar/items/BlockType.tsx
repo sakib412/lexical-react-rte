@@ -1,3 +1,5 @@
+import {$createParagraphNode, $getSelection, $isRangeSelection} from 'lexical';
+
 import {$createCodeNode} from '@lexical/code';
 import {
   INSERT_CHECK_LIST_COMMAND,
@@ -6,10 +8,12 @@ import {
 } from '@lexical/list';
 import {$createHeadingNode, $createQuoteNode} from '@lexical/rich-text';
 import {$setBlocksType} from '@lexical/selection';
-import {$createParagraphNode, $getSelection, $isRangeSelection} from 'lexical';
 
 import {useToolbarState} from '../../context/ToolbarContext';
-import {blockTypeToBlockName, type BlockType as BlockTypeEnum} from '../../types';
+import {
+  type BlockType as BlockTypeEnum,
+  blockTypeToBlockName,
+} from '../../types';
 import DropDown, {DropDownItem} from '../../ui/DropDown';
 import {
   IconCodeBlock,
@@ -48,7 +52,9 @@ export default function BlockType({className}: {className?: string}) {
     });
   };
 
-  const formatHeading = (headingSize: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6') => {
+  const formatHeading = (
+    headingSize: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+  ) => {
     if (blockType !== headingSize) {
       activeEditor?.update(() => {
         const selection = $getSelection();
@@ -100,7 +106,9 @@ export default function BlockType({className}: {className?: string}) {
       <DropDownItem
         className={`rte-dropdown-item ${blockType === 'paragraph' ? 'rte-dropdown-item--active' : ''}`}
         onClick={formatParagraph}>
-        <span className="rte-dropdown-item-icon">{blockTypeIcons.paragraph}</span>
+        <span className="rte-dropdown-item-icon">
+          {blockTypeIcons.paragraph}
+        </span>
         <span className="rte-dropdown-item-text">Normal</span>
       </DropDownItem>
       <DropDownItem
@@ -123,19 +131,28 @@ export default function BlockType({className}: {className?: string}) {
       </DropDownItem>
       <DropDownItem
         className={`rte-dropdown-item ${blockType === 'bullet' ? 'rte-dropdown-item--active' : ''}`}
-        onClick={() => activeEditor?.dispatchCommand(INSERT_UNORDERED_LIST_COMMAND, undefined)}>
+        onClick={() =>
+          activeEditor?.dispatchCommand(
+            INSERT_UNORDERED_LIST_COMMAND,
+            undefined
+          )
+        }>
         <span className="rte-dropdown-item-icon">{blockTypeIcons.bullet}</span>
         <span className="rte-dropdown-item-text">Bulleted List</span>
       </DropDownItem>
       <DropDownItem
         className={`rte-dropdown-item ${blockType === 'number' ? 'rte-dropdown-item--active' : ''}`}
-        onClick={() => activeEditor?.dispatchCommand(INSERT_ORDERED_LIST_COMMAND, undefined)}>
+        onClick={() =>
+          activeEditor?.dispatchCommand(INSERT_ORDERED_LIST_COMMAND, undefined)
+        }>
         <span className="rte-dropdown-item-icon">{blockTypeIcons.number}</span>
         <span className="rte-dropdown-item-text">Numbered List</span>
       </DropDownItem>
       <DropDownItem
         className={`rte-dropdown-item ${blockType === 'check' ? 'rte-dropdown-item--active' : ''}`}
-        onClick={() => activeEditor?.dispatchCommand(INSERT_CHECK_LIST_COMMAND, undefined)}>
+        onClick={() =>
+          activeEditor?.dispatchCommand(INSERT_CHECK_LIST_COMMAND, undefined)
+        }>
         <span className="rte-dropdown-item-icon">{blockTypeIcons.check}</span>
         <span className="rte-dropdown-item-text">Check List</span>
       </DropDownItem>

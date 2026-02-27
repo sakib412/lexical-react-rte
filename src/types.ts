@@ -67,7 +67,7 @@ export interface BaseEditorProps {
   onChange?: (
     editorState: EditorState,
     editor: LexicalEditor,
-    tags: Set<string>,
+    tags: Set<string>
   ) => void;
   /** Ref for imperative editor access */
   ref?: Ref<EditorRef>;

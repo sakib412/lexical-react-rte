@@ -3,7 +3,11 @@ import {INSERT_HORIZONTAL_RULE_COMMAND} from '@lexical/react/LexicalHorizontalRu
 import {useToolbarState} from '../../context/ToolbarContext';
 import {IconHorizontalRule} from '../../ui/icons';
 
-export default function InsertHorizontalRule({className}: {className?: string}) {
+export default function InsertHorizontalRule({
+  className,
+}: {
+  className?: string;
+}) {
   const {state} = useToolbarState();
 
   return (
@@ -11,7 +15,12 @@ export default function InsertHorizontalRule({className}: {className?: string}) 
       type="button"
       disabled={!state.isEditable}
       className={`rte-toolbar-item ${className || ''}`.trim()}
-      onClick={() => state.activeEditor?.dispatchCommand(INSERT_HORIZONTAL_RULE_COMMAND, undefined)}
+      onClick={() =>
+        state.activeEditor?.dispatchCommand(
+          INSERT_HORIZONTAL_RULE_COMMAND,
+          undefined
+        )
+      }
       title="Insert horizontal rule"
       aria-label="Insert horizontal rule">
       <IconHorizontalRule />

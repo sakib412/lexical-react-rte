@@ -13,7 +13,9 @@
   box-shadow: var(--rte-floating-toolbar-shadow);
   opacity: 0;
   transform: translateY(4px);
-  transition: opacity 0.15s ease, transform 0.15s ease;
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease;
   pointer-events: none;
 }
 

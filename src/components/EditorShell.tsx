@@ -1,19 +1,20 @@
-import {LinkPlugin} from '@lexical/react/LexicalLinkPlugin';
+import {forwardRef, type ReactNode} from 'react';
+import type {EditorThemeClasses, SerializedEditorState} from 'lexical';
+
+import {AutoFocusPlugin} from '@lexical/react/LexicalAutoFocusPlugin';
 import {CheckListPlugin} from '@lexical/react/LexicalCheckListPlugin';
 import {LexicalComposer} from '@lexical/react/LexicalComposer';
 import {ContentEditable} from '@lexical/react/LexicalContentEditable';
 import {LexicalErrorBoundary} from '@lexical/react/LexicalErrorBoundary';
 import {HistoryPlugin} from '@lexical/react/LexicalHistoryPlugin';
-import {AutoFocusPlugin} from '@lexical/react/LexicalAutoFocusPlugin';
+import {LinkPlugin} from '@lexical/react/LexicalLinkPlugin';
 import {ListPlugin} from '@lexical/react/LexicalListPlugin';
 import {RichTextPlugin} from '@lexical/react/LexicalRichTextPlugin';
 import {TabIndentationPlugin} from '@lexical/react/LexicalTabIndentationPlugin';
-import type {EditorThemeClasses, SerializedEditorState} from 'lexical';
-import {forwardRef, type ReactNode} from 'react';
 
+import editorDefaultConfig from '../configs/editorDefaultConfig';
 import {EditorContextProvider} from '../context/EditorContext';
 import {ToolbarProvider} from '../context/ToolbarContext';
-import editorDefaultConfig from '../configs/editorDefaultConfig';
 import AutoLinkPlugin from '../plugins/AutoLinkPlugin';
 import CodeHighlightPlugin from '../plugins/CodeHighlightPlugin';
 import EditablePlugin from '../plugins/EditablePlugin';
@@ -22,8 +23,8 @@ import HorizontalRulePlugin from '../plugins/HorizontalRulePlugin';
 import InitialValuePlugin from '../plugins/InitialValuePlugin';
 import MarkdownShortcutPlugin from '../plugins/MarkdownShortcutPlugin';
 import OnChangePlugin from '../plugins/OnChangePlugin';
-import Placeholder from '../ui/Placeholder';
 import type {BaseEditorProps, EditorRef} from '../types';
+import Placeholder from '../ui/Placeholder';
 
 import '../styles/editor.css';
 
@@ -50,12 +51,19 @@ const EditorShell = forwardRef<EditorRef, EditorShellProps>(
       before,
       after,
     },
-    ref,
+    ref
   ) {
     const initialConfig = {
       ...editorDefaultConfig,
       ...(namespace ? {namespace} : {}),
-      ...(theme ? {theme: {...editorDefaultConfig.theme, ...theme} as EditorThemeClasses} : {}),
+      ...(theme
+        ? {
+            theme: {
+              ...editorDefaultConfig.theme,
+              ...theme,
+            } as EditorThemeClasses,
+          }
+        : {}),
       ...(onError ? {onError} : {}),
       editable,
     };
@@ -70,7 +78,8 @@ const EditorShell = forwardRef<EditorRef, EditorShellProps>(
       <LexicalComposer initialConfig={initialConfig}>
         <EditorContextProvider ref={ref}>
           <ToolbarProvider>
-            <div className={`rte-root ${className || ''} ${classNames.root || ''}`.trim()}>
+            <div
+              className={`rte-root ${className || ''} ${classNames.root || ''}`.trim()}>
               {before}
               <div
                 className={`rte-editor-container ${classNames.editorContainer || ''}`.trim()}>
@@ -105,7 +114,9 @@ const EditorShell = forwardRef<EditorRef, EditorShellProps>(
             {/* Prop-driven plugins */}
             <OnChangePlugin onChange={onChange} />
             <InitialValuePlugin
-              initialValue={initialValue as SerializedEditorState | string | undefined}
+              initialValue={
+                initialValue as SerializedEditorState | string | undefined
+              }
             />
             <EditablePlugin editable={editable} />
             {autoFocus && <AutoFocusPlugin />}
@@ -113,7 +124,7 @@ const EditorShell = forwardRef<EditorRef, EditorShellProps>(
         </EditorContextProvider>
       </LexicalComposer>
     );
-  },
+  }
 );
 
 export default EditorShell;

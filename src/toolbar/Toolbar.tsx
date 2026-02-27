@@ -2,6 +2,14 @@ import type {ReactNode} from 'react';
 
 import ToolbarPlugin from '../plugins/ToolbarPlugin';
 
+// Groups
+import AlignFormat from './groups/AlignFormat';
+import BlockFormat from './groups/BlockFormat';
+import ColorFormat from './groups/ColorFormat';
+import FontFormat from './groups/FontFormat';
+import History from './groups/History';
+import InsertGroup from './groups/InsertGroup';
+import TextFormat from './groups/TextFormat';
 // Items
 import Alignment from './items/Alignment';
 import BackgroundColor from './items/BackgroundColor';
@@ -25,16 +33,6 @@ import ToolbarButton from './items/ToolbarButton';
 import ToolbarToggle from './items/ToolbarToggle';
 import Underline from './items/Underline';
 import Undo from './items/Undo';
-
-// Groups
-import AlignFormat from './groups/AlignFormat';
-import BlockFormat from './groups/BlockFormat';
-import ColorFormat from './groups/ColorFormat';
-import FontFormat from './groups/FontFormat';
-import History from './groups/History';
-import InsertGroup from './groups/InsertGroup';
-import TextFormat from './groups/TextFormat';
-
 // Default
 import DefaultToolbar from './DefaultToolbar';
 

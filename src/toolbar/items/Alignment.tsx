@@ -1,8 +1,8 @@
 import {
+  type ElementFormatType,
   FORMAT_ELEMENT_COMMAND,
   INDENT_CONTENT_COMMAND,
   OUTDENT_CONTENT_COMMAND,
-  type ElementFormatType,
 } from 'lexical';
 
 import {useToolbarState} from '../../context/ToolbarContext';
@@ -42,33 +42,51 @@ export default function Alignment({className}: {className?: string}) {
       buttonAriaLabel="Text alignment">
       <DropDownItem
         className={`rte-dropdown-item ${elementFormat === 'left' ? 'rte-dropdown-item--active' : ''}`}
-        onClick={() => activeEditor?.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'left')}>
-        <IconAlignLeft /> <span className="rte-dropdown-item-text">Left Align</span>
+        onClick={() =>
+          activeEditor?.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'left')
+        }>
+        <IconAlignLeft />{' '}
+        <span className="rte-dropdown-item-text">Left Align</span>
       </DropDownItem>
       <DropDownItem
         className={`rte-dropdown-item ${elementFormat === 'center' ? 'rte-dropdown-item--active' : ''}`}
-        onClick={() => activeEditor?.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'center')}>
-        <IconAlignCenter /> <span className="rte-dropdown-item-text">Center Align</span>
+        onClick={() =>
+          activeEditor?.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'center')
+        }>
+        <IconAlignCenter />{' '}
+        <span className="rte-dropdown-item-text">Center Align</span>
       </DropDownItem>
       <DropDownItem
         className={`rte-dropdown-item ${elementFormat === 'right' ? 'rte-dropdown-item--active' : ''}`}
-        onClick={() => activeEditor?.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'right')}>
-        <IconAlignRight /> <span className="rte-dropdown-item-text">Right Align</span>
+        onClick={() =>
+          activeEditor?.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'right')
+        }>
+        <IconAlignRight />{' '}
+        <span className="rte-dropdown-item-text">Right Align</span>
       </DropDownItem>
       <DropDownItem
         className={`rte-dropdown-item ${elementFormat === 'justify' ? 'rte-dropdown-item--active' : ''}`}
-        onClick={() => activeEditor?.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'justify')}>
-        <IconAlignJustify /> <span className="rte-dropdown-item-text">Justify Align</span>
+        onClick={() =>
+          activeEditor?.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'justify')
+        }>
+        <IconAlignJustify />{' '}
+        <span className="rte-dropdown-item-text">Justify Align</span>
       </DropDownItem>
       <DropDownItem
         className="rte-dropdown-item"
-        onClick={() => activeEditor?.dispatchCommand(OUTDENT_CONTENT_COMMAND, undefined)}>
-        {isRTL ? <IconIndent /> : <IconOutdent />} <span className="rte-dropdown-item-text">Outdent</span>
+        onClick={() =>
+          activeEditor?.dispatchCommand(OUTDENT_CONTENT_COMMAND, undefined)
+        }>
+        {isRTL ? <IconIndent /> : <IconOutdent />}{' '}
+        <span className="rte-dropdown-item-text">Outdent</span>
       </DropDownItem>
       <DropDownItem
         className="rte-dropdown-item"
-        onClick={() => activeEditor?.dispatchCommand(INDENT_CONTENT_COMMAND, undefined)}>
-        {isRTL ? <IconOutdent /> : <IconIndent />} <span className="rte-dropdown-item-text">Indent</span>
+        onClick={() =>
+          activeEditor?.dispatchCommand(INDENT_CONTENT_COMMAND, undefined)
+        }>
+        {isRTL ? <IconOutdent /> : <IconIndent />}{' '}
+        <span className="rte-dropdown-item-text">Indent</span>
       </DropDownItem>
     </DropDown>
   );

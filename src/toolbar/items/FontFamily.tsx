@@ -1,4 +1,5 @@
 import {$getSelection, $isRangeSelection} from 'lexical';
+
 import {$patchStyleText} from '@lexical/selection';
 
 import {useToolbarState} from '../../context/ToolbarContext';

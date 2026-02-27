@@ -11,7 +11,9 @@ export default function Undo({className}: {className?: string}) {
       type="button"
       disabled={!state.canUndo || !state.isEditable}
       className={`rte-toolbar-item ${className || ''}`.trim()}
-      onClick={() => state.activeEditor?.dispatchCommand(UNDO_COMMAND, undefined)}
+      onClick={() =>
+        state.activeEditor?.dispatchCommand(UNDO_COMMAND, undefined)
+      }
       title="Undo (Ctrl+Z)"
       aria-label="Undo">
       <IconUndo />

@@ -1,5 +1,11 @@
+import {
+  createContext,
+  type ReactNode,
+  useCallback,
+  useContext,
+  useState,
+} from 'react';
 import type {ElementFormatType, LexicalEditor, NodeKey} from 'lexical';
-import {createContext, useCallback, useContext, useState, type ReactNode} from 'react';
 
 import type {BlockType} from '../types';
 
@@ -78,7 +84,7 @@ interface ToolbarContextValue {
   state: ToolbarState;
   updateToolbarState: <K extends ToolbarStateKey>(
     key: K,
-    value: ToolbarState[K],
+    value: ToolbarState[K]
   ) => void;
 }
 
@@ -97,8 +103,9 @@ interface ToolbarProviderProps {
 }
 
 export function ToolbarProvider({children}: ToolbarProviderProps) {
-  const [toolbarState, setToolbarState] =
-    useState<ToolbarState>(INITIAL_TOOLBAR_STATE);
+  const [toolbarState, setToolbarState] = useState<ToolbarState>(
+    INITIAL_TOOLBAR_STATE
+  );
 
   const updateToolbarState = useCallback(
     <K extends ToolbarStateKey>(key: K, value: ToolbarState[K]) => {
@@ -107,12 +114,11 @@ export function ToolbarProvider({children}: ToolbarProviderProps) {
         return {...prev, [key]: value};
       });
     },
-    [],
+    []
   );
 
   return (
-    <ToolbarContext.Provider
-      value={{state: toolbarState, updateToolbarState}}>
+    <ToolbarContext.Provider value={{state: toolbarState, updateToolbarState}}>
       {children}
     </ToolbarContext.Provider>
   );

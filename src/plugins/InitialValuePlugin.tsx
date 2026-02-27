@@ -1,8 +1,9 @@
+import {useEffect, useRef} from 'react';
+import type {SerializedEditorState} from 'lexical';
+import {$getRoot, $insertNodes} from 'lexical';
+
 import {$generateNodesFromDOM} from '@lexical/html';
 import {useLexicalComposerContext} from '@lexical/react/LexicalComposerContext';
-import {$getRoot, $insertNodes} from 'lexical';
-import type {SerializedEditorState} from 'lexical';
-import {useEffect, useRef} from 'react';
 
 interface InitialValuePluginProps {
   initialValue?: SerializedEditorState | string;

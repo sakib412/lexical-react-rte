@@ -6,7 +6,7 @@
  *
  */
 
-import {type JSX, useEffect, useMemo, useRef, useState} from 'react';
+import {type JSX, useMemo, useRef, useState} from 'react';
 
 import TextInput from '../TextInput/TextInput';
 
@@ -91,13 +91,14 @@ export default function ColorPicker({
     onChange?.(newColor.hex);
   };
 
-  // Sync internal state when color prop changes (no onChange call)
-  useEffect(() => {
-    if (color === undefined) return;
+  // Sync internal state when color prop changes (React-recommended pattern)
+  const [prevColor, setPrevColor] = useState(color);
+  if (color !== undefined && color !== prevColor) {
+    setPrevColor(color);
     const newColor = transformColor('hex', color);
     setSelfColor(newColor);
     setInputColor(newColor.hex);
-  }, [color]);
+  }
 
   return (
     <div

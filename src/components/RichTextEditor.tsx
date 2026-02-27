@@ -2,6 +2,7 @@ import {forwardRef} from 'react';
 
 import {Toolbar} from '../toolbar/Toolbar';
 import type {EditorRef, RichTextEditorProps} from '../types';
+
 import EditorShell from './EditorShell';
 
 const RichTextEditor = forwardRef<EditorRef, RichTextEditorProps>(
@@ -11,7 +12,7 @@ const RichTextEditor = forwardRef<EditorRef, RichTextEditorProps>(
     const toolbar = children ?? <Toolbar />;
 
     return <EditorShell ref={ref} before={toolbar} {...props} />;
-  },
+  }
 );
 
 export default RichTextEditor;

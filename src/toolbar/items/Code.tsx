@@ -11,7 +11,9 @@ export default function Code({className}: {className?: string}) {
       type="button"
       disabled={!state.isEditable}
       className={`rte-toolbar-item ${state.isCode ? 'rte-toolbar-item--active' : ''} ${className || ''}`.trim()}
-      onClick={() => state.activeEditor?.dispatchCommand(FORMAT_TEXT_COMMAND, 'code')}
+      onClick={() =>
+        state.activeEditor?.dispatchCommand(FORMAT_TEXT_COMMAND, 'code')
+      }
       title="Inline code"
       aria-label="Format code"
       aria-pressed={state.isCode}>

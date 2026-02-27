@@ -11,7 +11,9 @@ export default function Superscript({className}: {className?: string}) {
       type="button"
       disabled={!state.isEditable}
       className={`rte-toolbar-item ${state.isSuperscript ? 'rte-toolbar-item--active' : ''} ${className || ''}`.trim()}
-      onClick={() => state.activeEditor?.dispatchCommand(FORMAT_TEXT_COMMAND, 'superscript')}
+      onClick={() =>
+        state.activeEditor?.dispatchCommand(FORMAT_TEXT_COMMAND, 'superscript')
+      }
       title="Superscript"
       aria-label="Format superscript"
       aria-pressed={state.isSuperscript}>

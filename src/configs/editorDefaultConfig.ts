@@ -1,7 +1,8 @@
 import type {InitialConfigType} from '@lexical/react/LexicalComposer';
 
-import editorNodes from './nodes';
 import defaultTheme from '../themes/default';
+
+import editorNodes from './nodes';
 
 function onError(error: Error) {
   console.error(error);

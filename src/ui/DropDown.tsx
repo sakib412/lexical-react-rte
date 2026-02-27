@@ -118,15 +118,17 @@ function DropDownItems({
     [registerItem]
   );
 
-  useEffect(() => {
-    if (items && !highlightedItem) {
-      setHighlightedItem(items[0]);
-    }
+  // Set initial highlighted item during render (React-recommended pattern)
+  if (items && !highlightedItem) {
+    setHighlightedItem(items[0]);
+  }
 
+  // Focus the highlighted item as a side effect
+  useEffect(() => {
     if (highlightedItem && highlightedItem.current) {
       highlightedItem.current.focus();
     }
-  }, [items, highlightedItem]);
+  }, [highlightedItem]);
 
   return (
     <DropDownContext.Provider value={contextValue}>

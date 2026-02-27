@@ -1,14 +1,4 @@
-import {$isCodeNode, CODE_LANGUAGE_MAP} from '@lexical/code';
-import {$isLinkNode} from '@lexical/link';
-import {$isListNode, ListNode} from '@lexical/list';
-import {useLexicalComposerContext} from '@lexical/react/LexicalComposerContext';
-import {$isHeadingNode} from '@lexical/rich-text';
-import {
-  $getSelectionStyleValueForProperty,
-  $isParentElementRTL,
-} from '@lexical/selection';
-import {$isTableNode, $isTableSelection} from '@lexical/table';
-import {$findMatchingParent, $getNearestNodeOfType, mergeRegister} from '@lexical/utils';
+import {useCallback, useEffect, useState} from 'react';
 import {
   $getSelection,
   $isElementNode,
@@ -19,11 +9,26 @@ import {
   COMMAND_PRIORITY_CRITICAL,
   SELECTION_CHANGE_COMMAND,
 } from 'lexical';
-import {useCallback, useEffect, useState} from 'react';
+
+import {$isCodeNode, CODE_LANGUAGE_MAP} from '@lexical/code';
+import {$isLinkNode} from '@lexical/link';
+import {$isListNode, ListNode} from '@lexical/list';
+import {useLexicalComposerContext} from '@lexical/react/LexicalComposerContext';
+import {$isHeadingNode} from '@lexical/rich-text';
+import {
+  $getSelectionStyleValueForProperty,
+  $isParentElementRTL,
+} from '@lexical/selection';
+import {$isTableNode, $isTableSelection} from '@lexical/table';
+import {
+  $findMatchingParent,
+  $getNearestNodeOfType,
+  mergeRegister,
+} from '@lexical/utils';
 
 import {useToolbarState} from '../context/ToolbarContext';
-import {getSelectedNode} from '../utils/getSelectedNode';
 import type {BlockType} from '../types';
+import {getSelectedNode} from '../utils/getSelectedNode';
 
 function getCodeLanguageFriendlyName(lang: string) {
   const map: Record<string, string> = CODE_LANGUAGE_MAP;
@@ -43,7 +48,10 @@ export default function ToolbarPlugin() {
       updateToolbarState('isBold', selection.hasFormat('bold'));
       updateToolbarState('isItalic', selection.hasFormat('italic'));
       updateToolbarState('isUnderline', selection.hasFormat('underline'));
-      updateToolbarState('isStrikethrough', selection.hasFormat('strikethrough'));
+      updateToolbarState(
+        'isStrikethrough',
+        selection.hasFormat('strikethrough')
+      );
       updateToolbarState('isCode', selection.hasFormat('code'));
       updateToolbarState('isHighlight', selection.hasFormat('highlight'));
       updateToolbarState('isSubscript', selection.hasFormat('subscript'));
@@ -60,23 +68,23 @@ export default function ToolbarPlugin() {
       // Font styles
       updateToolbarState(
         'fontColor',
-        $getSelectionStyleValueForProperty(selection, 'color', '#000'),
+        $getSelectionStyleValueForProperty(selection, 'color', '#000')
       );
       updateToolbarState(
         'bgColor',
         $getSelectionStyleValueForProperty(
           selection,
           'background-color',
-          '#fff',
-        ),
+          '#fff'
+        )
       );
       updateToolbarState(
         'fontFamily',
-        $getSelectionStyleValueForProperty(selection, 'font-family', 'Arial'),
+        $getSelectionStyleValueForProperty(selection, 'font-family', 'Arial')
       );
       updateToolbarState(
         'fontSize',
-        $getSelectionStyleValueForProperty(selection, 'font-size', '15px'),
+        $getSelectionStyleValueForProperty(selection, 'font-size', '15px')
       );
 
       // Block type
@@ -102,7 +110,7 @@ export default function ToolbarPlugin() {
         if ($isListNode(element)) {
           const parentList = $getNearestNodeOfType<ListNode>(
             anchorNode,
-            ListNode,
+            ListNode
           );
           const type = parentList
             ? parentList.getListType()
@@ -120,7 +128,7 @@ export default function ToolbarPlugin() {
             const language = element.getLanguage();
             updateToolbarState(
               'codeLanguage',
-              language ? getCodeLanguageFriendlyName(language) : '',
+              language ? getCodeLanguageFriendlyName(language) : ''
             );
           }
         }
@@ -135,13 +143,16 @@ export default function ToolbarPlugin() {
       if ($isLinkNode(parent)) {
         matchingParent = $findMatchingParent(
           node,
-          (parentNode) => $isElementNode(parentNode) && !parentNode.isInline(),
+          (parentNode) => $isElementNode(parentNode) && !parentNode.isInline()
         );
       }
-      const formatElement = matchingParent ?? ($isElementNode(element) ? element : null);
+      const formatElement =
+        matchingParent ?? ($isElementNode(element) ? element : null);
       updateToolbarState(
         'elementFormat',
-        formatElement && $isElementNode(formatElement) ? formatElement.getFormatType() || 'left' : 'left',
+        formatElement && $isElementNode(formatElement)
+          ? formatElement.getFormatType() || 'left'
+          : 'left'
       );
     } else if ($isTableSelection(selection)) {
       // Table selection - keep current toolbar state
@@ -157,7 +168,7 @@ export default function ToolbarPlugin() {
         $updateToolbar();
         return false;
       },
-      COMMAND_PRIORITY_CRITICAL,
+      COMMAND_PRIORITY_CRITICAL
     );
   }, [editor, $updateToolbar]);
 
@@ -190,7 +201,7 @@ export default function ToolbarPlugin() {
           updateToolbarState('canUndo', payload);
           return false;
         },
-        COMMAND_PRIORITY_CRITICAL,
+        COMMAND_PRIORITY_CRITICAL
       ),
       activeEditor.registerCommand<boolean>(
         CAN_REDO_COMMAND,
@@ -198,8 +209,8 @@ export default function ToolbarPlugin() {
           updateToolbarState('canRedo', payload);
           return false;
         },
-        COMMAND_PRIORITY_CRITICAL,
-      ),
+        COMMAND_PRIORITY_CRITICAL
+      )
     );
   }, [$updateToolbar, activeEditor, editor, updateToolbarState]);
 
