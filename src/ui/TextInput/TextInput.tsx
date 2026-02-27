@@ -28,11 +28,11 @@ export default function TextInput({
   type = 'text',
 }: Props): JSX.Element {
   return (
-    <div className="Input__wrapper">
-      <label className="Input__label">{label}</label>
+    <div className="rte-input-wrapper">
+      <label className="rte-input-label">{label}</label>
       <input
         type={type}
-        className="Input__input"
+        className="rte-input-input"
         placeholder={placeholder}
         value={value}
         onChange={(e) => {

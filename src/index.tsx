@@ -1,36 +1,21 @@
-import {useState} from 'react';
+// Editor components
+export {default as RichTextEditor} from './components/RichTextEditor';
+export {default as InlineEditor} from './components/InlineEditor';
 
-import {AutoFocusPlugin} from '@lexical/react/LexicalAutoFocusPlugin';
-import {LexicalComposer} from '@lexical/react/LexicalComposer';
-import {ContentEditable} from '@lexical/react/LexicalContentEditable';
-import {LexicalErrorBoundary} from '@lexical/react/LexicalErrorBoundary';
-import {HistoryPlugin} from '@lexical/react/LexicalHistoryPlugin';
-import {RichTextPlugin} from '@lexical/react/LexicalRichTextPlugin';
+// Toolbar compound component
+export {Toolbar} from './toolbar/Toolbar';
 
-import editorDefaultConfig from './configs/editorDefaultConfig';
-import ToolbarPlugin from './plugins/ToolbarPlugin/ToolbarPlugin';
-import Placeholder from './ui/Placeholder';
+// Types
+export type {
+  EditorRef,
+  RichTextEditorProps,
+  InlineEditorProps,
+  BaseEditorProps,
+  EditorClassNames,
+  BlockType,
+  ToolbarButtonProps,
+  ToolbarToggleProps,
+} from './types';
 
-import './styles/editor.css';
-
-function Editor() {
-  const [, setIsLinkEditMode] = useState<boolean>(false);
-  return (
-    <LexicalComposer initialConfig={editorDefaultConfig}>
-      <ToolbarPlugin setIsLinkEditMode={setIsLinkEditMode} />
-      <div className="editor-container">
-        <div className="editor-inner">
-          <RichTextPlugin
-            contentEditable={<ContentEditable className="editor-input" />}
-            placeholder={<Placeholder />}
-            ErrorBoundary={LexicalErrorBoundary}
-          />
-          <AutoFocusPlugin />
-          <HistoryPlugin />
-        </div>
-      </div>
-    </LexicalComposer>
-  );
-}
-
-export default Editor;
+// Re-exports for advanced users
+export type {EditorState, LexicalEditor, SerializedEditorState} from 'lexical';

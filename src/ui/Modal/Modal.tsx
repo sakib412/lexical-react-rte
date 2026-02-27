@@ -66,17 +66,17 @@ function PortalImpl({
   }, [closeOnClickOutside, onClose]);
 
   return (
-    <div className="Modal__overlay" role="dialog">
-      <div className="Modal__modal" tabIndex={-1} ref={modalRef}>
-        <h2 className="Modal__title">{title}</h2>
+    <div className="rte-modal-overlay" role="dialog">
+      <div className="rte-modal-modal" tabIndex={-1} ref={modalRef}>
+        <h2 className="rte-modal-title">{title}</h2>
         <button
-          className="Modal__closeButton"
+          className="rte-modal-closeButton"
           aria-label="Close modal"
           type="button"
           onClick={onClose}>
           X
         </button>
-        <div className="Modal__content">{children}</div>
+        <div className="rte-modal-content">{children}</div>
       </div>
     </div>
   );

@@ -7,7 +7,7 @@
  *
  */
 
-.Modal__overlay {
+.rte-modal-overlay {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,7 +22,7 @@
   flex-shrink: 1px;
   z-index: 100;
 }
-.Modal__modal {
+.rte-modal-modal {
   padding: 20px;
   min-height: 100px;
   min-width: 300px;
@@ -34,13 +34,13 @@
   box-shadow: 0 0 20px 0 #444;
   border-radius: 10px;
 }
-.Modal__title {
+.rte-modal-title {
   color: #444;
   margin: 0px;
   padding-bottom: 10px;
   border-bottom: 1px solid #ccc;
 }
-.Modal__closeButton {
+.rte-modal-closeButton {
   border: 0px;
   position: absolute;
   right: 20px;
@@ -54,9 +54,9 @@
   cursor: pointer;
   background-color: #eee;
 }
-.Modal__closeButton:hover {
+.rte-modal-closeButton:hover {
   background-color: #ddd;
 }
-.Modal__content {
+.rte-modal-content {
   padding-top: 20px;
 }

@@ -11,10 +11,16 @@ importers:
       '@lexical/code':
         specifier: 0.41.0
         version: 0.41.0
+      '@lexical/html':
+        specifier: 0.41.0
+        version: 0.41.0
       '@lexical/link':
         specifier: 0.41.0
         version: 0.41.0
       '@lexical/list':
+        specifier: 0.41.0
+        version: 0.41.0
+      '@lexical/markdown':
         specifier: 0.41.0
         version: 0.41.0
       '@lexical/react':

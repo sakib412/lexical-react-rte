@@ -1,0 +1,56 @@
+@import '../themes/variables.css';
+
+.rte-floating-toolbar {
+  position: absolute;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 4px 8px;
+  background: var(--rte-floating-toolbar-bg);
+  color: var(--rte-floating-toolbar-color);
+  border-radius: var(--rte-floating-toolbar-radius);
+  box-shadow: var(--rte-floating-toolbar-shadow);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  pointer-events: none;
+}
+
+.rte-floating-toolbar--visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Override toolbar item colors for dark floating toolbar */
+.rte-floating-toolbar .rte-toolbar-item {
+  color: var(--rte-floating-toolbar-color);
+}
+
+.rte-floating-toolbar .rte-toolbar-item:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.rte-floating-toolbar .rte-toolbar-item--active {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.rte-floating-toolbar .rte-toolbar-separator {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Arrow */
+.rte-floating-toolbar::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid var(--rte-floating-toolbar-bg);
+}

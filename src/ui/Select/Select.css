@@ -21,7 +21,7 @@ select {
   --select-arrow: var(--select-border);
 }
 
-.select {
+.rte-select {
   min-width: 160px;
   max-width: 290px;
   border: 1px solid var(--select-border);

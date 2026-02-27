@@ -1,6 +1,6 @@
-import {InitialConfigType} from '@lexical/react/LexicalComposer';
+import type {InitialConfigType} from '@lexical/react/LexicalComposer';
 
-import defaultNodes from '../nodes/nodes';
+import editorNodes from './nodes';
 import defaultTheme from '../themes/default';
 
 function onError(error: Error) {
@@ -8,9 +8,9 @@ function onError(error: Error) {
 }
 
 const editorDefaultConfig: InitialConfigType = {
-  namespace: 'editor',
+  namespace: 'lexical-react-rte',
   theme: defaultTheme,
-  nodes: [...defaultNodes],
+  nodes: [...editorNodes],
   onError,
 };
 
